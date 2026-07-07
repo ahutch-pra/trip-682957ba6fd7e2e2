@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html lang="en" data-season="b">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Palmi &amp; Lucca &middot; A Tailormade Italian Honeymoon</title>
+<meta name="description" content="A sixteen-day, fifteen-night honeymoon journey from Calabria to Tuscany — the Amalfi Coast, Rome, the Val d'Orcia and Florence woven quietly in between.">
+<!-- iOS Safari chrome: tint the status bar / home-screen bookmark to the forest palette -->
+<meta name="theme-color" content="#16211B">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!-- Google Fonts: Playfair Display (display), Cormorant Garamond (headings), Inter (body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Leaflet (interactive route map) -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+<!-- Font Awesome (icons) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to itinerary content</a>
+<div id="scroll-progress" aria-hidden="true"></div>
+
+<!-- ============ STICKY NAVIGATION ============ -->
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">Palmi <span class="amp">&amp;</span> Lucca</a>
+    <nav class="nav-links" aria-label="Section navigation">
+      <a href="#overview" data-target="#overview">Overview</a>
+      <a href="#route" data-target="#route">Route</a>
+      <a href="#itinerary" data-target="#itinerary">Itinerary</a>
+      <a href="#stay" data-target="#stay">Stay</a>
+      <a href="#experiences" data-target="#experiences">Experiences</a>
+      <a href="#restaurants" data-target="#restaurants">Restaurants</a>
+      <a href="#travel-info" data-target="#travel-info">Travel Info</a>
+      <a href="planning.html">Planning</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="season-toggle" role="group" aria-label="Choose your travel season">
+        <button type="button" id="btnA" aria-pressed="false">April</button>
+        <button type="button" id="btnB" aria-pressed="true">May</button>
+      </div>
+      <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile section navigation">
+    <a href="#overview">Overview</a>
+    <a href="#route">Route</a>
+    <a href="#itinerary">Itinerary</a>
+    <a href="#stay">Where You&rsquo;ll Stay</a>
+    <a href="#experiences">Experiences</a>
+    <a href="#restaurants">Restaurants</a>
+    <a href="#travel-info">Travel Info</a>
+    <a href="planning.html">Planning</a>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-bg" id="hero-bg" style="background-image:url('assets/img/01-hero-amalfi-coast.jpg')"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="badge">Tailormade &middot; Private Journey</span>
+    <p class="eyebrow">A Sixteen-Day Honeymoon Through Italy</p>
+    <h1 class="hero-title">Palmi <span class="amp">&amp;</span> Lucca</h1>
+    <p class="hero-sub">From his family&rsquo;s Calabrian coast to hers in Tuscany &mdash; the Amalfi Coast, Rome, and the Val d&rsquo;Orcia woven quietly in between.</p>
+    <div class="hero-stats">
+      <div class="hstat"><span class="hn">16</span><span class="hl">Days &middot; 15 Nights</span></div>
+      <div class="hstat"><span class="hn">6</span><span class="hl">Bases &middot; 11 Stops</span></div>
+      <div class="hstat"><span class="hn sA">April</span><span class="hn sB">May</span><span class="hl">Travel Season</span></div>
+      <div class="hstat"><span class="hn hn-cost">$8.2K&ndash;$12.4K</span><span class="hl">Est. Cost / Couple</span></div>
+    </div>
+    <a class="btn btn-gold" href="#itinerary">View Itinerary</a>
+  </div>
+  <button class="scroll-cue" onclick="scrollToSection('#overview')" aria-label="Scroll to trip overview"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+</section>
+
+<main id="main">
+
+<!-- ============ OVERVIEW ============ -->
+<section id="overview" class="wrap">
+  <div class="section-head reveal">
+    <span class="eyebrow">The Idea</span>
+    <h2>South to north, <em>slowly</em></h2>
+    <p>A honeymoon linking both families&rsquo; ancestral towns &mdash; Palmi in Calabria and Lucca in Tuscany &mdash; with the Amalfi Coast, Rome, and the Val d&rsquo;Orcia countryside in between. Built for romance rather than a monument checklist: slow mornings, sunset terraces, vineyard lunches, and only six hotel check-ins across fifteen nights.</p>
+  </div>
+  <div class="overview-grid">
+    <div class="lead reveal">
+      <p>You travel only the scenic stretches by car. At Salerno the first rental is dropped and the Amalfi Coast is reached by ferry; trains quietly link Salerno&ndash;Rome, Rome&ndash;Orvieto&ndash;Chiusi, and Florence&ndash;Lucca. Eleven of the fifteen nights are spent on the coast, in the countryside, or in the two family towns &mdash; the great cities of Rome and Florence get a light, deliberate touch.</p>
+      <p class="sA">Traveling in April brings the greenest countryside, wildflowers and wisteria, and the lightest crowds and prices &mdash; though the sea remains too cold to swim. Confirm coastal hotels, the Salerno&ndash;Amalfi ferries, and the boat operators have opened for the season.</p>
+      <p class="sB">Traveling in May is the honeymoon pick: the sea warms to a swimmable 66&ndash;70&deg;F, the evenings run long and golden, and the coast is fully in season &mdash; book the scarce items (Atrani, the balloon, the private boat) early.</p>
+      <ul class="highlights">
+        <li><i class="fa-solid fa-heart" aria-hidden="true"></i> Two ancestral family towns bookend the journey &mdash; his in Calabria, hers in Tuscany</li>
+        <li><i class="fa-solid fa-heart" aria-hidden="true"></i> One fully unscheduled day built into the Amalfi Coast stay</li>
+        <li><i class="fa-solid fa-heart" aria-hidden="true"></i> No one-night stands with your luggage &mdash; only six check-ins in fifteen nights</li>
+        <li><i class="fa-solid fa-heart" aria-hidden="true"></i> Wine days designed so no one ever drives after tasting</li>
+      </ul>
+    </div>
+    <div class="stat-cards">
+      <div class="stat-card reveal reveal-delay-1"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i><span class="stat-num" data-count="16">0</span><span class="stat-label">Days</span></div>
+      <div class="stat-card reveal reveal-delay-1"><i class="fa-solid fa-bed" aria-hidden="true"></i><span class="stat-num" data-count="6">0</span><span class="stat-label">Bases &middot; Hotel Check-Ins</span></div>
+      <div class="stat-card reveal reveal-delay-2"><i class="fa-solid fa-map-pin" aria-hidden="true"></i><span class="stat-num" data-count="11">0</span><span class="stat-label">Stops Along the Route</span></div>
+      <div class="stat-card reveal reveal-delay-2"><i class="fa-solid fa-plane" aria-hidden="true"></i><span class="stat-num" data-count="1">0</span><span class="stat-label">Open-Jaw Flight</span></div>
+      <div class="stat-card reveal reveal-delay-3"><i class="fa-solid fa-car" aria-hidden="true"></i><span class="stat-num" data-count="9">0</span><span class="stat-label">Hrs Driving (Scenic Only)</span></div>
+      <div class="stat-card reveal reveal-delay-3"><i class="fa-solid fa-umbrella-beach" aria-hidden="true"></i><span class="stat-num" data-count="4">0</span><span class="stat-label">Nights on the Amalfi Coast</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ROUTE MAP ============ -->
+<section id="route" class="wrap">
+  <div class="section-head reveal">
+    <span class="eyebrow">The Route</span>
+    <h2>Every stop, <em>connected</em></h2>
+    <p>Hover a pin to see it highlighted below; click any stop &mdash; on the map or in the list &mdash; to jump straight to its chapter in the itinerary.</p>
+  </div>
+  <div class="route-legend reveal" aria-label="How you travel between stops">
+    <span><span class="leg-line"></span> Drive (rental car)</span>
+    <span><span class="leg-line ferry"></span> Ferry (Salerno &harr; Atrani)</span>
+    <span><span class="leg-line train"></span> Train</span>
+  </div>
+  <div class="map-wrap reveal">
+    <div id="route-map" role="img" aria-label="Interactive map of the honeymoon route from Calabria to Tuscany"></div>
+    <div class="map-fallback" id="map-fallback" hidden>
+      <svg viewBox="0 0 420 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fallback-title">
+        <title id="fallback-title">Illustrated route from Calabria to Tuscany</title>
+        <path d="M60,500 C40,430 90,400 70,340 C50,280 100,260 90,210 C80,160 140,150 150,110 C160,70 210,60 200,20"
+          fill="none" stroke="#2E4034" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round"/>
+        <g font-family="Cormorant Garamond, serif" font-size="15" fill="#3A4145">
+          <circle cx="60" cy="500" r="10" fill="#B08A3E"/><text x="80" y="505">1. Palmi &amp; Tropea</text>
+          <circle cx="70" cy="340" r="10" fill="#2E4034"/><text x="90" y="345">2. Amalfi Coast</text>
+          <circle cx="90" cy="210" r="10" fill="#2E4034"/><text x="110" y="215">3. Rome</text>
+          <circle cx="150" cy="110" r="10" fill="#2E4034"/><text x="170" y="115">4. Val d&rsquo;Orcia</text>
+          <circle cx="180" cy="55" r="10" fill="#2E4034"/><text x="200" y="60">5. Florence</text>
+          <circle cx="200" cy="20" r="10" fill="#B08A3E"/><text x="220" y="25">6. Lucca &amp; Pisa</text>
+        </g>
+      </svg>
+      <p style="font-size:13px;color:var(--ink-soft);margin-top:10px">Illustrated route shown while the interactive map loads.</p>
+    </div>
+  </div>
+  <ul class="route-list" id="route-list" aria-label="Route stops, in travel order"></ul>
+</section>
+
+<!-- ============ ITINERARY ============ -->
+<section id="itinerary" class="wrap">
+  <div class="section-head reveal">
+    <span class="eyebrow">Day By Day</span>
+    <h2>Six bases, <em>base by base</em></h2>
+    <p>Every destination is its own magazine spread. Tap any day to open its morning, afternoon, and evening.</p>
+  </div>
+
+  <!-- BASE 1 : CALABRIA -->
+  <article class="base-spread left" id="base-calabria">
+    <div class="figure-col reveal">
+      <span class="base-index">1</span>
+      <figure data-lightbox="true" data-caption="Scilla and the Castello Ruffo, Calabria">
+        <img loading="lazy" src="assets/img/02-scilla-and-the-castello-ruffo.jpg" alt="Scilla and the Castello Ruffo rising over the beach, Calabria">
+        <figcaption>Scilla &amp; the Castello Ruffo, Calabria</figcaption>
+      </figure>
+    </div>
+    <div class="text-col reveal">
+      <div class="base-head">
+        <h3>Calabria <em>&middot; his ancestral coast</em></h3>
+        <span class="nights-badge sA">Apr 9&ndash;11</span><span class="nights-badge sB">May 7&ndash;9</span>
+      </div>
+      <p class="base-overview">The honeymoon opens in his family&rsquo;s town: a caf&eacute;-lined piazza, a belvedere sunset, and the first aperitivo of married life &mdash; followed by a day given over to Scilla&rsquo;s fishermen&rsquo;s quarter and Tropea&rsquo;s clifftop old town.</p>
+      <div class="meta-row">
+        <span class="meta-chip"><i class="fa-solid fa-route" aria-hidden="true"></i> Next: ~4.5 hrs to Amalfi Coast</span>
+        <span class="meta-chip"><i class="fa-solid fa-person-walking" aria-hidden="true"></i> Leisurely walking</span>
+        <span class="meta-chip"><i class="fa-solid fa-camera" aria-hidden="true"></i> 2 nights</span>
+      </div>
+      <div class="base-lists">
+        <div>
+          <h4>Must-See</h4>
+          <ul>
+            <li>Piazza Primo Maggio, Palmi</li>
+            <li>Monte Sant&rsquo;Elia belvedere</li>
+            <li>Tropea&rsquo;s clifftop old town &amp; Santa Maria dell&rsquo;Isola</li>
+            <li>Scilla&rsquo;s Chianalea quarter</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Optional</h4>
+          <ul>
+            <li>Family-history visit to the comune / parish archives</li>
+            <li>Sunset aperitivo cruise from Tropea</li>
+          </ul>
+        </div>
+      </div>
+      <p class="photo-note"><i class="fa-solid fa-camera-retro" aria-hidden="true"></i> Best photo op: the Chianalea houses rising straight from the sea in Scilla, and Tropea&rsquo;s clifftop view at golden hour.</p>
+
+      <details class="day">
+        <summary><span class="day-chip"><span class="sA">Fri, Apr 9</span><span class="sB">Fri, May 7</span></span><span class="day-title">Fly Out <em>&middot; overnight to Italy</em></span><span class="caret" aria-hidden="true"></span></summary>
+        <div class="day-body"><p>Overnight flight San Antonio &rarr; European hub &rarr; Lamezia Terme. Sleep on the plane &mdash; Italy tomorrow.</p></div>
+      </details>
+      <details class="day">
+        <summary><span class="day-chip"><span class="sA">Sat, Apr 10</span><span class="sB">Sat, May 8</span></span><span class="day-title">Arrive Calabria <em>&middot; night 1</em></span><span class="caret" aria-hidden="true"></span></summary>
+        <div class="day-body">
+          <dl class="mae">
+            <dt>Morning</dt><dd>Land at Lamezia Terme, collect Car&nbsp;#1, drive ~1 hr to Palmi.</dd>
+            <dt>Afternoon</dt><dd>Settle in; wander the caf&eacute;-lined Piazza Primo Maggio; ask at the comune about family records.</dd>
+            <dt>Evening</dt><dd>Sunset from the Monte Sant&rsquo;Elia belvedere; the first aperitivo of married life.</dd>
+          </dl>
+        </div>
+      </details>
+      <details class="day">
+        <summary><span class="day-chip"><span class="sA">Sun, Apr 11</span><span class="sB">Sun, May 9</span></span><span class="day-title">Scilla &amp; Tropea <em>&middot; night 2</em></span><span class="caret" aria-hidden="true"></span></summary>
+        <div class="day-body">
+          <dl class="mae">
+            <dt>Morning</dt><dd>Leisurely breakfast, then a short drive to Scilla.</dd>
+            <dt>Afternoon</dt><dd>Lunch in the Chianalea fishermen&rsquo;s quarter, where the houses rise from the water; drive on to Tropea.</dd>
+            <dt>Evening</dt><dd>Tropea&rsquo;s clifftop old town, Santa Maria dell&rsquo;Isola, a long seafood sunset. <span class="sA">April: admire the turquoise from above.</span> <span class="sB">May: swim &mdash; the water is finally warm.</span></dd>
+          </dl>
+        </div>
+      </details>
+    </div>
+  </article>
+
+  <!-- BASE 2 : AMALFI COAST -->
+  <article class="base-spread right" id="base-amalfi">
+    <div class="figure-col reveal">
+      <span class="base-index">2</span>
+      <figure data-lightbox="true" data-caption="Atrani and the Amalfi Coast at golden hour">
+        <img loading="lazy" src="assets/img/03-the-village-of-atrani-on.jpg" alt="The village of Atrani on the Amalfi Coast, seen from above">
+        <figcaption>Atrani, five minutes on foot from Amalfi town</figcaption>
+      </figure>
+    </div>
+    <div class="text-col reveal">
+      <div class="base-head">
+        <h3>Amalfi Coast <em>&middot; Atrani</em></h3>
+        <span class="nights-badge sA">Apr 12&ndash;15</span><span class="nights-badge sB">May 10&ndash;13</span>
+      </div>
+      <p class="base-overview">Four nights on a sea-view terrace &mdash; the longest single stay of the trip, and the one built with real unscheduled time. Arrival is by ferry, not traffic; Ravello&rsquo;s gardens, a genuinely open day, and a private sunset boat fill the rest.</p>
+      <div class="meta-row">
+        <span class="meta-chip"><i class="fa-solid fa-route" aria-hidden="true"></i> Next: ~3 hrs to Rome (ferry + train)</span>
+        <span class="meta-chip"><i class="fa-solid fa-person-hiking" aria-hidden="true"></i> Moderate walking</span>
+        <span class="meta-chip"><i class="fa-solid fa-camera" aria-hidden="true"></i> 4 nights</span>
+      </div>
+      <div class="base-lists">
+        <div>
+          <h4>Must-See</h4>
+          <ul>
+            <li>Villa Cimbrone&rsquo;s Terrace of Infinity, Ravello</li>
+            <li>Villa Rufolo gardens</li>
+            <li>Amalfi town &amp; cathedral steps</li>
+            <li>The Furore Fjord, by boat</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Optional</h4>
+          <ul>
+            <li>Herculaneum half-day, or Pompeii full day (pick one)</li>
+            <li>Lemon-terrace walk &amp; limoncello tasting</li>
+            <li>Private sunset boat</li>
+          </ul>
+        </div>
+      </div>
+      <p class="photo-note"><i class="fa-solid fa-camera-retro" aria-hidden="true"></i> Best photo op: the Terrace of Infinity at golden hour, and the Furore Fjord turning gold from the water.</p>
+
+      <details class="day">
+        <summary><span class="day-chip"><span class="sA">Mon, Apr 12</span><span class="sB">Mon, May 10</span></span><span class="day-title">North via Maratea <em>&middot; night 3</em></span><span class="caret" aria-hidden="true"></span></summary>
+        <div class="day-body">
+          <dl class="mae">
+            <dt>Morning</dt><dd>Depart Tropea mid-morning; coastal drive toward Maratea.</dd>
+            <dt>Afternoon</dt><dd>Long lunch in Maratea&rsquo;s port and hilltop lanes, the Christ the Redeemer viewpoint; continue on to Salerno and drop Car&nbsp;#1.</dd>
+            <dt>Evening</dt><dd>Ferry across to Atrani; terrace dinner as the light fades.</dd>
+          </dl>
+        </div>
+      </details>
+      <details class="day">
+        <summary><span class="day-chip"><span class="sA">Tue, Apr 13</span><span class="sB">Tue, May 11</span></span><span class="day-title">Ravello <em>&middot; night 4</em></span><span class="caret" aria-hidden="true"></span></summary>
+        <div class="day-body">
+          <dl class="mae">
+            <dt>Morning</dt><dd>Villa Cimbrone&rsquo;s Terrace of Infinity.</dd>
+            <dt>Afternoon</dt><dd>Villa Rufolo gardens; a lazy lunch.</dd>
+            <dt>Evening</dt><dd>Stay up in Ravello after the day-trippers leave for a splurge sunset dinner &mdash; the most romantic table on the coast.</dd>
+          </dl>
+        </div>
+      </details>
+      <details class="day">
+        <summary><span class="day-chip"><span class="sA">Wed, Apr 14</span><span class="sB">Wed, May 12</span></span><span class="day-title">The Unscheduled Day <em>&middot; night 5</em></span><span class="caret" aria-hidden="true"></span></summary>
+        <div class="day-body">
+          <dl class="mae">
+            <dt>Morning</dt><dd>Yours &mdash; sleep in, or an early ferry to Salerno for Herculaneum.</dd>
+            <dt>Afternoon</dt><dd>Herculaneum&rsquo;s intact villas (or Pompeii, a full day), or the lemon-terrace walk and limoncello tasting above Amalfi town.</dd>
+            <dt>Evening</dt><dd>Nothing booked &mdash; the terrace, the view, each other.</dd>
+          </dl>
+        </div>
+      </details>
+      <details class="day">
+        <summary><span class="day-chip"><span class="sA">Thu, Apr 15</span><span class="sB">Thu, May 13</span></span><span class="day-title">On The Sea <em>&middot; night 6</em></span><span class="caret" aria-hidden="true"></span></summary>
+        <div class="day-body">
+          <dl class="mae">
+            <dt>Morning</dt><dd>A late breakfast on the terrace.</dd>
+            <dt>Afternoon</dt><dd>Private or small-group sunset boat &mdash; swim coves along the coast.</dd>
+            <dt>Evening</dt><dd>The Furore Fjord turning gold; a cold bottle onboard.</dd>
+          </dl>
+        </div>
+      </details>
+    </div>
+  </article>
+
+  <!-- BASE 3 : ROME -->
+  <article class="base-spread left" id="base-rome">
+    <div class="figure-col reveal">
+      <span class="base-index">3</span>
+      <figure data-lightbox="true" data-caption="The Pantheon, Rome">
+        <img loading="lazy" src="assets/img/04-the-pantheon-in-rome-under.jpg" alt="The Pantheon in Rome under a blue sky">
+        <figcaption>The Pantheon, Rome</figcaption>
+      </figure>
+    </div>
+    <div class="text-col reveal">
+      <div class="base-head">
+        <h3>Rome <em>&middot; Trastevere &amp; the Aventine</em></h3>
+        <span class="nights-badge sA">Apr 16&ndash;17</span><span class="nights-badge sB">May 14&ndash;15</span>
+      </div>
+      <p class="base-overview">No marathon of monuments &mdash; a rowboat in Villa Borghese, the Pantheon by daylight, and the Aventine Hill&rsquo;s Orange Garden at sunset, with the Trevi Fountain reserved for after dark.</p>
+      <div class="meta-row">
+        <span class="meta-chip"><i class="fa-solid fa-route" aria-hidden="true"></i> Next: ~2.5 hrs to Val d&rsquo;Orcia</span>
+        <span class="meta-chip"><i class="fa-solid fa-person-walking" aria-hidden="true"></i> Easy &ndash; moderate walking</span>
+        <span class="meta-chip"><i class="fa-solid fa-camera" aria-hidden="true"></i> 2 nights</span>
+      </div>
+      <div class="base-lists">
+        <div>
+          <h4>Must-See</h4>
+          <ul>
+            <li>The Pantheon</li>
+            <li>Villa Borghese gardens</li>
+            <li>The Aventine Orange Garden &amp; Knights of Malta keyhole</li>
+            <li>Trevi Fountain, after dark</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Optional</h4>
+          <ul>
+            <li>Colosseum / Vatican (pre-booked, only if keen)</li>
+            <li>Rooftop aperitivo</li>
+          </ul>
+        </div>
+      </div>
+      <p class="photo-note"><i class="fa-solid fa-camera-retro" aria-hidden="true"></i> Best photo op: the Knights of Malta keyhole framing St. Peter&rsquo;s dome, and the Orange Garden at sunset over the Tiber.</p>
+
+      <details class="day">
+        <summary><span class="day-chip"><span class="sA">Fri, Apr 16</span><span class="sB">Fri, May 14</span></span><span class="day-title">To Rome <em>&middot; night 7</em></span><span class="caret" aria-hidden="true"></span></summary>
+        <div class="day-body">
+          <dl class="mae">
+            <dt>Morning</dt><dd>Ferry or bus back to Salerno.</dd>
+            <dt>Afternoon</dt><dd>Frecciarossa to Rome; check in near Trastevere.</dd>
+            <dt>Evening</dt><dd>Lantern-lit dinner in Trastevere&rsquo;s lanes.</dd>
+          </dl>
+        </div>
+      </details>
+      <details class="day">
+        <summary><span class="day-chip"><span class="sA">Sat, Apr 17</span><span class="sB">Sat, May 15</span></span><span class="day-title">Romantic Rome <em>&middot; night 8</em></span><span class="caret" aria-hidden="true"></span></summary>
+        <div class="day-body">
+          <dl class="mae">
+            <dt>Morning</dt><dd>Villa Borghese gardens; a rowboat on the lake.</dd>
+            <dt>Afternoon</dt><dd>The Pantheon, gelato, then the Aventine Hill&rsquo;s Orange Garden at sunset.</dd>
+            <dt>Evening</dt><dd>The Knights of Malta keyhole, the Trevi after dark, a rooftop nightcap.</dd>
+          </dl>
+        </div>
+      </details>
+    </div>
+  </article>
+
+  <!-- BASE 4 : VAL D'ORCIA -->
+  <article class="base-spread right" id="base-valdorcia">
+    <div class="figure-col reveal">
+      <span class="base-index">4</span>
+      <figure data-lightbox="true" data-caption="A cypress-lined road through the Val d'Orcia">
+        <img loading="lazy" src="assets/img/05-cypress-trees-on-the-rolling.jpg" alt="Cypress trees on the rolling hills of the Val d'Orcia, Tuscany">
+        <figcaption>The cypresses of the Val d&rsquo;Orcia</figcaption>
+      </figure>
+    </div>
+    <div class="text-col reveal">
+      <div class="base-head">
+        <h3>Val d&rsquo;Orcia <em>&middot; the agriturismo</em></h3>
+        <span class="nights-badge sA">Apr 18&ndash;20</span><span class="nights-badge sB">May 16&ndash;18</span>
+      </div>
+      <p class="base-overview">Three nights on a working farm between Montepulciano and Pienza &mdash; a sunrise chapel, a thermal soak, wine days built so no one drives after tasting, and a farm dinner under the pergola.</p>
+      <div class="meta-row">
+        <span class="meta-chip"><i class="fa-solid fa-route" aria-hidden="true"></i> Next: ~2.5 hrs to Florence</span>
+        <span class="meta-chip"><i class="fa-solid fa-person-walking" aria-hidden="true"></i> Leisurely, one early sunrise</span>
+        <span class="meta-chip"><i class="fa-solid fa-camera" aria-hidden="true"></i> 3 nights</span>
+      </div>
+      <div class="base-lists">
+        <div>
+          <h4>Must-See</h4>
+          <ul>
+            <li>Vino Nobile cellars inside Montepulciano</li>
+            <li>Pienza&rsquo;s piazza &amp; pecorino</li>
+            <li>Bagno Vignoni thermal baths</li>
+            <li>Cappella della Madonna di Vitaleta at sunrise</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Optional</h4>
+          <ul>
+            <li>Sunrise hot-air balloon</li>
+            <li>Hired driver for a Brunello/Montalcino day</li>
+            <li>Farm dinner at the agriturismo</li>
+          </ul>
+        </div>
+      </div>
+      <p class="photo-note"><i class="fa-solid fa-camera-retro" aria-hidden="true"></i> Best photo op: sunrise at the Vitaleta chapel with the San Quirico cypress groves &mdash; the best light of the whole trip.</p>
+
+      <details class="day">
+        <summary><span class="day-chip"><span class="sA">Sun, Apr 18</span><span class="sB">Sun, May 16</span></span><span class="day-title">Via Orvieto <em>&middot; night 9</em></span><span class="caret" aria-hidden="true"></span></summary>
+        <div class="day-body">
+          <dl class="mae">
+            <dt>Morning</dt><dd>Train Rome &rarr; Orvieto; the funicular up the rock.</dd>
+            <dt>Afternoon</dt><dd>Orvieto&rsquo;s cathedral fa&ccedil;ade, a long lunch; onward train to Chiusi and Car&nbsp;#2.</dd>
+            <dt>Evening</dt><dd>Into the hills to the agriturismo; sunset over the vines, dinner in Montepulciano or at the farm.</dd>
+          </dl>
+        </div>
+      </details>
+      <details class="day">
+        <summary><span class="day-chip"><span class="sA">Mon, Apr 19</span><span class="sB">Mon, May 17</span></span><span class="day-title">Slow Tuscany <em>&middot; night 10</em></span><span class="caret" aria-hidden="true"></span></summary>
+        <div class="day-body">
+          <dl class="mae">
+            <dt>Morning</dt><dd>Pienza &mdash; pecorino and the perfect piazza.</dd>
+            <dt>Afternoon</dt><dd>A thermal soak at Bagno Vignoni; a long vineyard lunch.</dd>
+            <dt>Evening</dt><dd>Golden hour at the Vitaleta chapel and San Quirico cypresses; a farm dinner under the pergola, nowhere to drive.</dd>
+          </dl>
+        </div>
+      </details>
+      <details class="day">
+        <summary><span class="day-chip"><span class="sA">Tue, Apr 20</span><span class="sB">Tue, May 18</span></span><span class="day-title">Vines &amp; Downtime <em>&middot; night 11</em></span><span class="caret" aria-hidden="true"></span></summary>
+        <div class="day-body">
+          <dl class="mae">
+            <dt>Morning</dt><dd>Optional sunrise hot-air balloon, or a DIY sunrise drive to Vitaleta with cappuccinos in hand.</dd>
+            <dt>Afternoon</dt><dd>Wine day, designed so no one drives after tasting: walk the cellars inside Montepulciano, or a hired driver to Montalcino.</dd>
+            <dt>Evening</dt><dd>The pool, with nowhere to be.</dd>
+          </dl>
+        </div>
+      </details>
+    </div>
+  </article>
+
+  <!-- BASE 5 : FLORENCE -->
+  <article class="base-spread left" id="base-florence">
+    <div class="figure-col reveal">
+      <span class="base-index">5</span>
+      <figure data-lightbox="true" data-caption="Florence's skyline and the Duomo at dusk">
+        <img loading="lazy" src="assets/img/06-the-duomo-of-florence-with.jpg" alt="The Duomo of Florence with Brunelleschi's dome rising above the rooftops">
+        <figcaption>The Duomo, Florence</figcaption>
+      </figure>
+    </div>
+    <div class="text-col reveal">
+      <div class="base-head">
+        <h3>Florence <em>&middot; Oltrarno</em></h3>
+        <span class="nights-badge sA">Apr 21&ndash;22</span><span class="nights-badge sB">May 19&ndash;20</span>
+      </div>
+      <p class="base-overview">A single museum, unhurried artisan lanes, and Gregorian vespers at San Miniato al Monte before the walk down to Piazzale Michelangelo for the best sunset in the city &mdash; with a three-hour stop in Siena along the way.</p>
+      <div class="meta-row">
+        <span class="meta-chip"><i class="fa-solid fa-route" aria-hidden="true"></i> Next: ~1 hr 20 to Lucca</span>
+        <span class="meta-chip"><i class="fa-solid fa-person-hiking" aria-hidden="true"></i> Moderate &ndash; one uphill walk</span>
+        <span class="meta-chip"><i class="fa-solid fa-camera" aria-hidden="true"></i> 2 nights</span>
+      </div>
+      <div class="base-lists">
+        <div>
+          <h4>Must-See</h4>
+          <ul>
+            <li>Piazza del Campo &amp; the Duomo, Siena</li>
+            <li>Uffizi or Accademia (pre-booked)</li>
+            <li>Oltrarno artisan lanes</li>
+            <li>San Miniato al Monte &amp; Piazzale Michelangelo</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Optional</h4>
+          <ul>
+            <li>Gregorian-chant vespers, San Miniato al Monte</li>
+            <li>Rooftop aperitivo over the Arno</li>
+          </ul>
+        </div>
+      </div>
+      <p class="photo-note"><i class="fa-solid fa-camera-retro" aria-hidden="true"></i> Best photo op: Piazzale Michelangelo at sunset, and Siena&rsquo;s striped Duomo interior.</p>
+
+      <details class="day">
+        <summary><span class="day-chip"><span class="sA">Wed, Apr 21</span><span class="sB">Wed, May 19</span></span><span class="day-title">Via Siena <em>&middot; night 12</em></span><span class="caret" aria-hidden="true"></span></summary>
+        <div class="day-body">
+          <dl class="mae">
+            <dt>Morning</dt><dd>Depart the agriturismo; drive to Siena.</dd>
+            <dt>Afternoon</dt><dd>The Piazza del Campo, the striped Duomo interior, lunch &mdash; parked outside the ZTL.</dd>
+            <dt>Evening</dt><dd>On to Florence Airport, drop Car&nbsp;#2, tram into town; Oltrarno dinner.</dd>
+          </dl>
+        </div>
+      </details>
+      <details class="day">
+        <summary><span class="day-chip"><span class="sA">Thu, Apr 22</span><span class="sB">Thu, May 20</span></span><span class="day-title">Florence, Unhurried <em>&middot; night 13</em></span><span class="caret" aria-hidden="true"></span></summary>
+        <div class="day-body">
+          <dl class="mae">
+            <dt>Morning</dt><dd>One museum at your own pace (Uffizi or Accademia, pre-booked).</dd>
+            <dt>Afternoon</dt><dd>The Oltrarno artisan lanes; a leisurely lunch.</dd>
+            <dt>Evening</dt><dd>Vespers with Gregorian chant at San Miniato al Monte; the walk down to Piazzale Michelangelo for sunset; a rooftop nightcap.</dd>
+          </dl>
+        </div>
+      </details>
+    </div>
+  </article>
+
+  <!-- BASE 6 : LUCCA -->
+  <article class="base-spread right" id="base-lucca">
+    <div class="figure-col reveal">
+      <span class="base-index">6</span>
+      <figure data-lightbox="true" data-caption="Piazza dell'Anfiteatro, Lucca">
+        <img loading="lazy" src="assets/img/07-the-oval-piazza-dell-anfiteatro.jpg" alt="The oval Piazza dell'Anfiteatro seen from above in Lucca">
+        <figcaption>Piazza dell&rsquo;Anfiteatro, Lucca</figcaption>
+      </figure>
+    </div>
+    <div class="text-col reveal">
+      <div class="base-head">
+        <h3>Lucca <em>&middot; her ancestral city</em></h3>
+        <span class="nights-badge sA">Apr 23&ndash;24</span><span class="nights-badge sB">May 21&ndash;22</span>
+      </div>
+      <p class="base-overview">The emotional finale: her family&rsquo;s city, biked at golden hour, closed with a Puccini recital a few streets from where he was born and dinner in the oval Piazza dell&rsquo;Anfiteatro. Pisa&rsquo;s Piazza dei Miracoli waits on the way to the airport.</p>
+      <div class="meta-row">
+        <span class="meta-chip"><i class="fa-solid fa-route" aria-hidden="true"></i> Next: ~30 min to Pisa (fly home)</span>
+        <span class="meta-chip"><i class="fa-solid fa-person-biking" aria-hidden="true"></i> Leisurely &mdash; flat walls, easy biking</span>
+        <span class="meta-chip"><i class="fa-solid fa-camera" aria-hidden="true"></i> 2 nights</span>
+      </div>
+      <div class="base-lists">
+        <div>
+          <h4>Must-See</h4>
+          <ul>
+            <li>The Renaissance city walls</li>
+            <li>Torre Guinigi</li>
+            <li>Piazza dell&rsquo;Anfiteatro</li>
+            <li>San Giovanni church</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Optional</h4>
+          <ul>
+            <li>Puccini e la sua Lucca recital</li>
+            <li>Family-history visit to the comune / parish</li>
+            <li>An hour at Pisa&rsquo;s Piazza dei Miracoli en route home</li>
+          </ul>
+        </div>
+      </div>
+      <p class="photo-note"><i class="fa-solid fa-camera-retro" aria-hidden="true"></i> Best photo op: the walls at golden hour, and the oval Piazza dell&rsquo;Anfiteatro at dusk.</p>
+
+      <details class="day">
+        <summary><span class="day-chip"><span class="sA">Fri, Apr 23</span><span class="sB">Fri, May 21</span></span><span class="day-title">To Lucca <em>&middot; night 14</em></span><span class="caret" aria-hidden="true"></span></summary>
+        <div class="day-body">
+          <dl class="mae">
+            <dt>Morning</dt><dd>A short train from Florence.</dd>
+            <dt>Afternoon</dt><dd>Settle in; bike the Renaissance walls at golden hour.</dd>
+            <dt>Evening</dt><dd>Dinner near the oval piazza.</dd>
+          </dl>
+        </div>
+      </details>
+      <details class="day">
+        <summary><span class="day-chip"><span class="sA">Sat, Apr 24</span><span class="sB">Sat, May 22</span></span><span class="day-title">Lucca <em>&middot; night 15</em></span><span class="caret" aria-hidden="true"></span></summary>
+        <div class="day-body">
+          <dl class="mae">
+            <dt>Morning</dt><dd>Torre Guinigi; a picnic on the walls.</dd>
+            <dt>Afternoon</dt><dd>The comune / parish for family history.</dd>
+            <dt>Evening</dt><dd>The Puccini e la sua Lucca recital at San Giovanni; dinner in the Piazza dell&rsquo;Anfiteatro.</dd>
+          </dl>
+          <p class="seasonal sA" style="margin-top:10px;font-style:italic;color:var(--forest)">April note: these two days fall on Italy&rsquo;s Liberation Day weekend &mdash; expect some ceremonies and closures; your Pisa flight is unaffected.</p>
+        </div>
+      </details>
+      <details class="day">
+        <summary><span class="day-chip"><span class="sA">Sun, Apr 25</span><span class="sB">Sun, May 23</span></span><span class="day-title">Fly Home <em>&middot; via Pisa</em></span><span class="caret" aria-hidden="true"></span></summary>
+        <div class="day-body">
+          <dl class="mae">
+            <dt>Morning</dt><dd>Train to Pisa (~30 min).</dd>
+            <dt>Afternoon</dt><dd>If timing allows, an hour at the Piazza dei Miracoli &mdash; the Leaning Tower, Duomo, and Baptistery.</dd>
+            <dt>Evening</dt><dd>Depart PSA &rarr; home.</dd>
+          </dl>
+        </div>
+      </details>
+    </div>
+  </article>
+</section>
+
+<!-- ============ WHERE YOU'LL STAY ============ -->
+<section id="stay" class="wrap">
+  <div class="section-head reveal">
+    <span class="eyebrow">Where You&rsquo;ll Stay</span>
+    <h2>Small, local, <em>never a chain</em></h2>
+    <p>B&amp;Bs, converted convents, and working agriturismi &mdash; two choices at every base, one leaning value, one a cozy splurge. Every card links straight to the property on Google Maps.</p>
+  </div>
+
+  <div class="base-block reveal">
+    <div class="base-block-head"><h3>Calabria &mdash; Tropea / Palmi</h3><span class="rule"></span><span class="count">2 stays</span></div>
+    <div class="carousel">
+      <button class="carousel-btn prev" type="button" aria-label="Scroll left" hidden>&#8249;</button>
+      <div class="carousel-track">
+        <div class="hotel-card">
+          <div class="hotel-media"><img loading="lazy" src="assets/img/08-tropea-old-town-on-the.jpg" alt="Tropea old town on the cliff above the sea, Calabria"></div>
+          <div class="hotel-body">
+            <h4 class="hotel-name">Villa Adua Charming Rooms</h4>
+            <div class="hotel-stars" aria-label="Guest rating 4.9 out of 5">&#9733; 4.9 &middot; guest rating</div>
+            <p class="hotel-loc"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Central Tropea, Calabria</p>
+            <p class="hotel-desc">An intimate central B&amp;B with a garden terrace, a short walk to both the beach and the old town.</p>
+            <p class="hotel-why"><strong>Why we recommend it:</strong> the warmest hosts on the coast, and a garden breakfast that starts the day slowly.</p>
+            <div class="amenities"><span>Garden Terrace</span><span>Breakfast Included</span><span>Walk to Beach</span></div>
+            <div class="hotel-foot">
+              <span class="price-range">$140&ndash;$200/night</span>
+            </div>
+            <a class="btn btn-line" style="margin-top:14px;width:100%;justify-content:center" href="https://www.google.com/maps/search/?api=1&amp;query=Villa+Adua+Charming+Rooms+Central+Tropea%2C+Calabria" target="_blank" rel="noopener">View on Google Maps <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="hotel-card">
+          <div class="hotel-media"><img loading="lazy" src="assets/img/09-coastal-lighthouse-and-cliffs-near.jpg" alt="Coastal lighthouse and cliffs near Tropea, Calabria"></div>
+          <div class="hotel-body">
+            <h4 class="hotel-name">Tropea Boutique Hotel</h4>
+            <div class="hotel-stars" aria-label="Guest rating 4.7 out of 5">&#9733; 4.7 &middot; guest rating</div>
+            <p class="hotel-loc"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Clifftop, Tropea</p>
+            <p class="hotel-desc">Rooftop breakfast with sea and Stromboli views, and warm family staff throughout.</p>
+            <p class="hotel-why"><strong>Why we recommend it:</strong> the volcano-view breakfast alone is worth the splurge.</p>
+            <div class="amenities"><span>Rooftop Terrace</span><span>Sea View</span><span>Family-Run</span></div>
+            <div class="hotel-foot">
+              <span class="price-range">$180&ndash;$260/night</span>
+            </div>
+            <a class="btn btn-line" style="margin-top:14px;width:100%;justify-content:center" href="https://www.google.com/maps/search/?api=1&amp;query=Tropea+Boutique+Hotel+Clifftop%2C+Tropea" target="_blank" rel="noopener">View on Google Maps <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-btn next" type="button" aria-label="Scroll right">&#8250;</button>
+    </div>
+  </div>
+  <div class="base-block reveal">
+    <div class="base-block-head"><h3>Amalfi Coast &mdash; Atrani</h3><span class="rule"></span><span class="count">2 stays</span></div>
+    <div class="carousel">
+      <button class="carousel-btn prev" type="button" aria-label="Scroll left" hidden>&#8249;</button>
+      <div class="carousel-track">
+        <div class="hotel-card">
+          <div class="hotel-media"><img loading="lazy" src="assets/img/10-amalfi-town-seen-from-the.jpg" alt="Amalfi town seen from the water"></div>
+          <div class="hotel-body">
+            <h4 class="hotel-name">Frennesia Atrani Rooms</h4>
+            <div class="hotel-stars" aria-label="Guest rating 4.9 out of 5">&#9733; 4.9 &middot; guest rating</div>
+            <p class="hotel-loc"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Atrani, Amalfi Coast</p>
+            <p class="hotel-desc">A family-run B&amp;B in quiet Atrani &mdash; sea-view terrace breakfasts, five minutes on foot to Amalfi town.</p>
+            <p class="hotel-why"><strong>Why we recommend it:</strong> Positano prices without the Positano crowds.</p>
+            <div class="amenities"><span>Sea View</span><span>Terrace Breakfast</span><span>Quiet Village</span></div>
+            <div class="hotel-foot">
+              <span class="price-range">$210&ndash;$300/night</span>
+            </div>
+            <a class="btn btn-line" style="margin-top:14px;width:100%;justify-content:center" href="https://www.google.com/maps/search/?api=1&amp;query=Frennesia+Atrani+Rooms+Atrani%2C+Amalfi+Coast" target="_blank" rel="noopener">View on Google Maps <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="hotel-card">
+          <div class="hotel-media"><img loading="lazy" src="assets/img/11-the-staircase-and-facade-of.jpg" alt="The staircase and facade of Amalfi Cathedral"></div>
+          <div class="hotel-body">
+            <h4 class="hotel-name">ABBRACCIO Amalfi Boutique Retreat</h4>
+            <div class="hotel-stars" aria-label="Guest rating 5.0 out of 5">&#9733; 5.0 &middot; guest rating</div>
+            <p class="hotel-loc"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Amalfi town</p>
+            <p class="hotel-desc">Tiny and spotless, with sea-and-cathedral views and hosts who anticipate everything.</p>
+            <p class="hotel-why"><strong>Why we recommend it:</strong> the sea-view splurge night, if the budget stretches to one.</p>
+            <div class="amenities"><span>Cathedral View</span><span>Concierge Hosts</span><span>Boutique</span></div>
+            <div class="hotel-foot">
+              <span class="price-range">$260&ndash;$380/night</span>
+            </div>
+            <a class="btn btn-line" style="margin-top:14px;width:100%;justify-content:center" href="https://www.google.com/maps/search/?api=1&amp;query=ABBRACCIO+Amalfi+Boutique+Retreat+Amalfi+town" target="_blank" rel="noopener">View on Google Maps <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-btn next" type="button" aria-label="Scroll right">&#8250;</button>
+    </div>
+  </div>
+  <div class="base-block reveal">
+    <div class="base-block-head"><h3>Rome &mdash; Monti / Trastevere</h3><span class="rule"></span><span class="count">2 stays</span></div>
+    <div class="carousel">
+      <button class="carousel-btn prev" type="button" aria-label="Scroll left" hidden>&#8249;</button>
+      <div class="carousel-track">
+        <div class="hotel-card">
+          <div class="hotel-media"><img loading="lazy" src="assets/img/12-the-colosseum-in-rome.jpg" alt="The Colosseum in Rome"></div>
+          <div class="hotel-body">
+            <h4 class="hotel-name">Salotto Monti</h4>
+            <div class="hotel-stars" aria-label="Guest rating 4.6 out of 5">&#9733; 4.6 &middot; guest rating</div>
+            <p class="hotel-loc"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Monti, Rome</p>
+            <p class="hotel-desc">Great-value rooms in the boutique Monti quarter, with a rooftop terrace and an easy walk to the Colosseum.</p>
+            <p class="hotel-why"><strong>Why we recommend it:</strong> the best neighborhood-to-price ratio in central Rome.</p>
+            <div class="amenities"><span>Rooftop Terrace</span><span>Central</span><span>Great Value</span></div>
+            <div class="hotel-foot">
+              <span class="price-range">$160&ndash;$230/night</span>
+            </div>
+            <a class="btn btn-line" style="margin-top:14px;width:100%;justify-content:center" href="https://www.google.com/maps/search/?api=1&amp;query=Salotto+Monti+Monti%2C+Rome" target="_blank" rel="noopener">View on Google Maps <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="hotel-card">
+          <div class="hotel-media"><img loading="lazy" src="assets/img/13-green-view-over-rome-from.jpg" alt="Green view over Rome from the Janiculum hill"></div>
+          <div class="hotel-body">
+            <h4 class="hotel-name">Horti 14 Borgo Trastevere</h4>
+            <div class="hotel-stars" aria-label="Guest rating 4.8 out of 5">&#9733; 4.8 &middot; guest rating</div>
+            <p class="hotel-loc"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Trastevere, Rome</p>
+            <p class="hotel-desc">Beside a private botanical garden &mdash; peaceful, yet steps from the buzz of Trastevere&rsquo;s lanes.</p>
+            <p class="hotel-why"><strong>Why we recommend it:</strong> a rooftop bar and true quiet, rare in the neighborhood.</p>
+            <div class="amenities"><span>Private Garden</span><span>Rooftop Bar</span><span>Quiet</span></div>
+            <div class="hotel-foot">
+              <span class="price-range">$240&ndash;$340/night</span>
+            </div>
+            <a class="btn btn-line" style="margin-top:14px;width:100%;justify-content:center" href="https://www.google.com/maps/search/?api=1&amp;query=Horti+14+Borgo+Trastevere+Trastevere%2C+Rome" target="_blank" rel="noopener">View on Google Maps <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-btn next" type="button" aria-label="Scroll right">&#8250;</button>
+    </div>
+  </div>
+  <div class="base-block reveal">
+    <div class="base-block-head"><h3>Val d&rsquo;Orcia &mdash; Pienza / San Quirico</h3><span class="rule"></span><span class="count">2 stays</span></div>
+    <div class="carousel">
+      <button class="carousel-btn prev" type="button" aria-label="Scroll left" hidden>&#8249;</button>
+      <div class="carousel-track">
+        <div class="hotel-card">
+          <div class="hotel-media"><img loading="lazy" src="assets/img/14-rolling-tuscan-farmland-below-the.jpg" alt="Rolling Tuscan farmland below the hill town of Pienza"></div>
+          <div class="hotel-body">
+            <h4 class="hotel-name">Agriturismo San Marcello</h4>
+            <div class="hotel-stars" aria-label="Guest rating 4.7 out of 5">&#9733; 4.7 &middot; guest rating</div>
+            <p class="hotel-loc"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Near Pienza, Val d&rsquo;Orcia</p>
+            <p class="hotel-desc">A working farm stay with a pool, sweeping valley views, and bikes to borrow.</p>
+            <p class="hotel-why"><strong>Why we recommend it:</strong> ask about the on-site farm dinner when booking &mdash; it&rsquo;s the trip&rsquo;s quiet highlight.</p>
+            <div class="amenities"><span>Pool</span><span>Farm Dinner</span><span>Bikes</span></div>
+            <div class="hotel-foot">
+              <span class="price-range">$180&ndash;$250/night</span>
+            </div>
+            <a class="btn btn-line" style="margin-top:14px;width:100%;justify-content:center" href="https://www.google.com/maps/search/?api=1&amp;query=Agriturismo+San+Marcello+Near+Pienza%2C+Val+d%27Orcia" target="_blank" rel="noopener">View on Google Maps <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="hotel-card">
+          <div class="hotel-media"><img loading="lazy" src="assets/img/15-the-medieval-tower-of-rocca.jpg" alt="The medieval tower of Rocca d&rsquo;Orcia above the Val d&rsquo;Orcia"></div>
+          <div class="hotel-body">
+            <h4 class="hotel-name">Podere Spagliarda</h4>
+            <div class="hotel-stars" aria-label="Guest rating 4.9 out of 5">&#9733; 4.9 &middot; guest rating</div>
+            <p class="hotel-loc"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> San Quirico d&rsquo;Orcia</p>
+            <p class="hotel-desc">An infinity pool suspended over the postcard hills &mdash; the romantic-core splurge of the trip.</p>
+            <p class="hotel-why"><strong>Why we recommend it:</strong> ask about an on-site tasting when booking.</p>
+            <div class="amenities"><span>Infinity Pool</span><span>Tasting Room</span><span>Splurge</span></div>
+            <div class="hotel-foot">
+              <span class="price-range">$320&ndash;$460/night</span>
+            </div>
+            <a class="btn btn-line" style="margin-top:14px;width:100%;justify-content:center" href="https://www.google.com/maps/search/?api=1&amp;query=Podere+Spagliarda+San+Quirico+d%27Orcia" target="_blank" rel="noopener">View on Google Maps <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-btn next" type="button" aria-label="Scroll right">&#8250;</button>
+    </div>
+  </div>
+  <div class="base-block reveal">
+    <div class="base-block-head"><h3>Florence &mdash; Oltrarno</h3><span class="rule"></span><span class="count">2 stays</span></div>
+    <div class="carousel">
+      <button class="carousel-btn prev" type="button" aria-label="Scroll left" hidden>&#8249;</button>
+      <div class="carousel-track">
+        <div class="hotel-card">
+          <div class="hotel-media"><img loading="lazy" src="assets/img/16-a-garden-terrace-overlooking-the.jpg" alt="A garden terrace overlooking the rooftops of Florence"></div>
+          <div class="hotel-body">
+            <h4 class="hotel-name">Secret Garden Firenze</h4>
+            <div class="hotel-stars" aria-label="Guest rating 4.9 out of 5">&#9733; 4.9 &middot; guest rating</div>
+            <p class="hotel-loc"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Oltrarno, Florence</p>
+            <p class="hotel-desc">Tucked-away and central, with a garden courtyard and hosts full of local tips.</p>
+            <p class="hotel-why"><strong>Why we recommend it:</strong> walking distance to everything, invisible from the street.</p>
+            <div class="amenities"><span>Garden Courtyard</span><span>Central</span><span>Breakfast Included</span></div>
+            <div class="hotel-foot">
+              <span class="price-range">$210&ndash;$300/night</span>
+            </div>
+            <a class="btn btn-line" style="margin-top:14px;width:100%;justify-content:center" href="https://www.google.com/maps/search/?api=1&amp;query=Secret+Garden+Firenze+Oltrarno%2C+Florence" target="_blank" rel="noopener">View on Google Maps <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="hotel-card">
+          <div class="hotel-media"><img loading="lazy" src="assets/img/17-the-pitti-palace-in-the.jpg" alt="The Pitti Palace in the late afternoon, Florence"></div>
+          <div class="hotel-body">
+            <h4 class="hotel-name">Piazza Pitti Palace</h4>
+            <div class="hotel-stars" aria-label="Guest rating 4.6 out of 5">&#9733; 4.6 &middot; guest rating</div>
+            <p class="hotel-loc"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Opposite Pitti Palace, Florence</p>
+            <p class="hotel-desc">Huge frescoed rooms opposite the Pitti Palace, away from the crush of the center.</p>
+            <p class="hotel-why"><strong>Why we recommend it:</strong> the grandeur of Florence without the queues on your doorstep.</p>
+            <div class="amenities"><span>Frescoed Ceilings</span><span>Historic Building</span><span>Quiet</span></div>
+            <div class="hotel-foot">
+              <span class="price-range">$260&ndash;$360/night</span>
+            </div>
+            <a class="btn btn-line" style="margin-top:14px;width:100%;justify-content:center" href="https://www.google.com/maps/search/?api=1&amp;query=Piazza+Pitti+Palace+Opposite+Pitti+Palace%2C+Florence" target="_blank" rel="noopener">View on Google Maps <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-btn next" type="button" aria-label="Scroll right">&#8250;</button>
+    </div>
+  </div>
+  <div class="base-block reveal">
+    <div class="base-block-head"><h3>Lucca</h3><span class="rule"></span><span class="count">2 stays</span></div>
+    <div class="carousel">
+      <button class="carousel-btn prev" type="button" aria-label="Scroll left" hidden>&#8249;</button>
+      <div class="carousel-track">
+        <div class="hotel-card">
+          <div class="hotel-media"><img loading="lazy" src="assets/img/18-the-formal-garden-of-palazzo.jpg" alt="The formal garden of Palazzo Pfanner in Lucca"></div>
+          <div class="hotel-body">
+            <h4 class="hotel-name">Lucca in Villa</h4>
+            <div class="hotel-stars" aria-label="Guest rating 4.7 out of 5">&#9733; 4.7 &middot; guest rating</div>
+            <p class="hotel-loc"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Steps from the city walls, Lucca</p>
+            <p class="hotel-desc">A villa B&amp;B a short walk from the walls, with free parking, on-site bikes, and a terrific breakfast.</p>
+            <p class="hotel-why"><strong>Why we recommend it:</strong> the bikes are already there for your golden-hour ride.</p>
+            <div class="amenities"><span>On-Site Bikes</span><span>Free Parking</span><span>Breakfast Included</span></div>
+            <div class="hotel-foot">
+              <span class="price-range">$170&ndash;$240/night</span>
+            </div>
+            <a class="btn btn-line" style="margin-top:14px;width:100%;justify-content:center" href="https://www.google.com/maps/search/?api=1&amp;query=Lucca+in+Villa+Steps+from+the+city+walls%2C+Lucca" target="_blank" rel="noopener">View on Google Maps <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="hotel-card">
+          <div class="hotel-media"><img loading="lazy" src="assets/img/19-lucca-cathedral-of-san-martino.jpg" alt="Lucca Cathedral of San Martino"></div>
+          <div class="hotel-body">
+            <h4 class="hotel-name">Inside the Wall</h4>
+            <div class="hotel-stars" aria-label="Guest rating 4.6 out of 5">&#9733; 4.6 &middot; guest rating</div>
+            <p class="hotel-loc"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Historic center, Lucca</p>
+            <p class="hotel-desc">Boutique rooms inside the walls with a wonderful host and everything within an easy walk.</p>
+            <p class="hotel-why"><strong>Why we recommend it:</strong> falls asleep and wakes up inside her family&rsquo;s city center.</p>
+            <div class="amenities"><span>Boutique</span><span>Central</span><span>Host On-Site</span></div>
+            <div class="hotel-foot">
+              <span class="price-range">$150&ndash;$210/night</span>
+            </div>
+            <a class="btn btn-line" style="margin-top:14px;width:100%;justify-content:center" href="https://www.google.com/maps/search/?api=1&amp;query=Inside+the+Wall+Historic+center%2C+Lucca" target="_blank" rel="noopener">View on Google Maps <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-btn next" type="button" aria-label="Scroll right">&#8250;</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCES ============ -->
+<section id="experiences" class="wrap">
+  <div class="section-head reveal">
+    <span class="eyebrow">Romantic Experiences</span>
+    <h2>Moments, <em>not a checklist</em></h2>
+    <p>A curated set of experiences at each base &mdash; nothing that requires a driving day after a glass of wine. Swipe through each stop.</p>
+  </div>
+
+  <div class="base-block reveal">
+    <div class="base-block-head"><h3>Calabria</h3><span class="rule"></span><span class="count">2 experiences</span></div>
+    <div class="carousel">
+      <button class="carousel-btn prev" type="button" aria-label="Scroll left" hidden>&#8249;</button>
+      <div class="carousel-track">
+        <div class="exp-card">
+          <div class="exp-media"><span class="exp-tag optional">Optional</span><img loading="lazy" src="assets/img/09-coastal-lighthouse-and-cliffs-near.jpg" alt="Coastal lighthouse and cliffs near Tropea, Calabria"></div>
+          <div class="exp-body">
+            <h3 class="exp-title">Sunset Aperitivo Cruise, Tropea</h3>
+            <p class="exp-desc">A small boat along the Coast of the Gods as the cliffs light up &mdash; spritz in hand, Stromboli smoking on the horizon.</p>
+            <div class="exp-meta">
+              <span><i class="fa-solid fa-clock" aria-hidden="true"></i> 2 hrs</span>
+              <span><i class="fa-solid fa-gauge" aria-hidden="true"></i> Easy</span>
+              <span><i class="fa-solid fa-sun" aria-hidden="true"></i> Sunset</span>
+            </div>
+            <div class="exp-score" aria-label="Recommended 4.5 out of 5">&#9733;&#9733;&#9733;&#9733;&#189;</div>
+          </div>
+        </div>
+        <div class="exp-card">
+          <div class="exp-media"><span class="exp-tag included">Included</span><img loading="lazy" src="assets/img/02-scilla-and-the-castello-ruffo.jpg" alt="Scilla and the Castello Ruffo rising over the beach, Calabria"></div>
+          <div class="exp-body">
+            <h3 class="exp-title">Chianalea, Scilla&rsquo;s Fishermen&rsquo;s Quarter</h3>
+            <p class="exp-desc">A long lunch where the houses rise straight from the water, beneath the Castello Ruffo &mdash; Calabria&rsquo;s little Venice.</p>
+            <div class="exp-meta">
+              <span><i class="fa-solid fa-clock" aria-hidden="true"></i> 2&ndash;3 hrs</span>
+              <span><i class="fa-solid fa-gauge" aria-hidden="true"></i> Easy</span>
+              <span><i class="fa-solid fa-sun" aria-hidden="true"></i> Midday</span>
+            </div>
+            <div class="exp-score" aria-label="Recommended 5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-btn next" type="button" aria-label="Scroll right">&#8250;</button>
+    </div>
+  </div>
+  <div class="base-block reveal">
+    <div class="base-block-head"><h3>Amalfi Coast</h3><span class="rule"></span><span class="count">3 experiences</span></div>
+    <div class="carousel">
+      <button class="carousel-btn prev" type="button" aria-label="Scroll left" hidden>&#8249;</button>
+      <div class="carousel-track">
+        <div class="exp-card">
+          <div class="exp-media"><span class="exp-tag optional">Optional</span><img loading="lazy" src="assets/img/20-the-furore-fjord-on-the.jpg" alt="The Furore fjord on the Amalfi Coast"></div>
+          <div class="exp-body">
+            <h3 class="exp-title">Private Sunset Boat</h3>
+            <p class="exp-desc">Swim coves and slip into the Furore Fjord as the cliffs turn gold, a cold bottle chilling in the cooler.</p>
+            <div class="exp-meta">
+              <span><i class="fa-solid fa-clock" aria-hidden="true"></i> 3 hrs</span>
+              <span><i class="fa-solid fa-gauge" aria-hidden="true"></i> Easy</span>
+              <span><i class="fa-solid fa-sun" aria-hidden="true"></i> Late afternoon</span>
+            </div>
+            <div class="exp-score" aria-label="Recommended 5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </div>
+        </div>
+        <div class="exp-card">
+          <div class="exp-media"><span class="exp-tag included">Included</span><img loading="lazy" src="assets/img/21-the-gardens-of-villa-cimbrone.jpg" alt="The gardens of Villa Cimbrone in Ravello at dusk"></div>
+          <div class="exp-body">
+            <h3 class="exp-title">Villa Cimbrone &amp; Rufolo Gardens</h3>
+            <p class="exp-desc">The Terrace of Infinity and the Rufolo gardens &mdash; arguably the most romantic view in Italy, for the price of two tickets.</p>
+            <div class="exp-meta">
+              <span><i class="fa-solid fa-clock" aria-hidden="true"></i> 2 hrs</span>
+              <span><i class="fa-solid fa-gauge" aria-hidden="true"></i> Easy</span>
+              <span><i class="fa-solid fa-sun" aria-hidden="true"></i> Morning</span>
+            </div>
+            <div class="exp-score" aria-label="Recommended 5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </div>
+        </div>
+        <div class="exp-card">
+          <div class="exp-media"><span class="exp-tag optional">Optional</span><img loading="lazy" src="assets/img/22-terraced-coastline-above-amalfi-town.jpg" alt="Terraced coastline above Amalfi town"></div>
+          <div class="exp-body">
+            <h3 class="exp-title">Lemon-Terrace &amp; Limoncello Tasting</h3>
+            <p class="exp-desc">A family-run walk through the lemon groves above Amalfi town, finishing with a limoncello tasting on the terrace.</p>
+            <div class="exp-meta">
+              <span><i class="fa-solid fa-clock" aria-hidden="true"></i> 1&ndash;2 hrs</span>
+              <span><i class="fa-solid fa-gauge" aria-hidden="true"></i> Easy</span>
+              <span><i class="fa-solid fa-sun" aria-hidden="true"></i> Midday</span>
+            </div>
+            <div class="exp-score" aria-label="Recommended 4.5 out of 5">&#9733;&#9733;&#9733;&#9733;&#189;</div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-btn next" type="button" aria-label="Scroll right">&#8250;</button>
+    </div>
+  </div>
+  <div class="base-block reveal">
+    <div class="base-block-head"><h3>Rome</h3><span class="rule"></span><span class="count">2 experiences</span></div>
+    <div class="carousel">
+      <button class="carousel-btn prev" type="button" aria-label="Scroll left" hidden>&#8249;</button>
+      <div class="carousel-track">
+        <div class="exp-card">
+          <div class="exp-media"><span class="exp-tag optional">Optional</span><img loading="lazy" src="assets/img/23-the-temple-and-lake-of.jpg" alt="The temple and lake of the Villa Borghese gardens, Rome"></div>
+          <div class="exp-body">
+            <h3 class="exp-title">Villa Borghese Rowboat</h3>
+            <p class="exp-desc">A rowboat on the lake at the heart of Rome&rsquo;s most romantic gardens, the temple of Asclepius mirrored in the water.</p>
+            <div class="exp-meta">
+              <span><i class="fa-solid fa-clock" aria-hidden="true"></i> 1 hr</span>
+              <span><i class="fa-solid fa-gauge" aria-hidden="true"></i> Easy</span>
+              <span><i class="fa-solid fa-sun" aria-hidden="true"></i> Morning</span>
+            </div>
+            <div class="exp-score" aria-label="Recommended 4.5 out of 5">&#9733;&#9733;&#9733;&#9733;&#189;</div>
+          </div>
+        </div>
+        <div class="exp-card">
+          <div class="exp-media"><span class="exp-tag included">Included</span><img loading="lazy" src="assets/img/24-the-giardino-degli-aranci-on.jpg" alt="The Giardino degli Aranci on the Aventine Hill, Rome"></div>
+          <div class="exp-body">
+            <h3 class="exp-title">The Aventine Orange Garden</h3>
+            <p class="exp-desc">Sunset over the Tiber from the Giardino degli Aranci, then the famous keyhole view of St. Peter&rsquo;s next door.</p>
+            <div class="exp-meta">
+              <span><i class="fa-solid fa-clock" aria-hidden="true"></i> 1 hr</span>
+              <span><i class="fa-solid fa-gauge" aria-hidden="true"></i> Easy</span>
+              <span><i class="fa-solid fa-sun" aria-hidden="true"></i> Sunset</span>
+            </div>
+            <div class="exp-score" aria-label="Recommended 5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-btn next" type="button" aria-label="Scroll right">&#8250;</button>
+    </div>
+  </div>
+  <div class="base-block reveal">
+    <div class="base-block-head"><h3>Val d&rsquo;Orcia</h3><span class="rule"></span><span class="count">4 experiences</span></div>
+    <div class="carousel">
+      <button class="carousel-btn prev" type="button" aria-label="Scroll left" hidden>&#8249;</button>
+      <div class="carousel-track">
+        <div class="exp-card">
+          <div class="exp-media"><span class="exp-tag optional">Optional</span><img loading="lazy" src="assets/img/25-hands-rolling-out-a-sheet.jpg" alt="Hands rolling out a sheet of fresh pasta"></div>
+          <div class="exp-body">
+            <h3 class="exp-title">Couples&rsquo; Tuscan Cooking Class</h3>
+            <p class="exp-desc">Hand-rolled pasta and a farmhouse lunch, taught in a Val d&rsquo;Orcia kitchen with a view of the hills.</p>
+            <div class="exp-meta">
+              <span><i class="fa-solid fa-clock" aria-hidden="true"></i> 4 hrs</span>
+              <span><i class="fa-solid fa-gauge" aria-hidden="true"></i> Easy</span>
+              <span><i class="fa-solid fa-sun" aria-hidden="true"></i> Midday</span>
+            </div>
+            <div class="exp-score" aria-label="Recommended 4.5 out of 5">&#9733;&#9733;&#9733;&#9733;&#189;</div>
+          </div>
+        </div>
+        <div class="exp-card">
+          <div class="exp-media"><span class="exp-tag optional">Optional</span><img loading="lazy" src="assets/img/26-an-atmospheric-wine-cellar-lined.jpg" alt="An atmospheric wine cellar lined with bottles"></div>
+          <div class="exp-body">
+            <h3 class="exp-title">Vino Nobile Cellar Tasting</h3>
+            <p class="exp-desc">Walk between historic cellars inside Montepulciano&rsquo;s walls &mdash; no driver needed, no tasting-then-driving.</p>
+            <div class="exp-meta">
+              <span><i class="fa-solid fa-clock" aria-hidden="true"></i> 2&ndash;3 hrs</span>
+              <span><i class="fa-solid fa-gauge" aria-hidden="true"></i> Easy</span>
+              <span><i class="fa-solid fa-sun" aria-hidden="true"></i> Afternoon</span>
+            </div>
+            <div class="exp-score" aria-label="Recommended 4.5 out of 5">&#9733;&#9733;&#9733;&#9733;&#189;</div>
+          </div>
+        </div>
+        <div class="exp-card">
+          <div class="exp-media"><span class="exp-tag optional">Optional</span><img loading="lazy" src="assets/img/27-a-red-hot-air-balloon.jpg" alt="A red hot-air balloon aloft against the sky"></div>
+          <div class="exp-body">
+            <h3 class="exp-title">Sunrise Hot-Air Balloon</h3>
+            <p class="exp-desc">Drift silently over the cypress hills as the Val d&rsquo;Orcia wakes below &mdash; the trip&rsquo;s signature splurge.</p>
+            <div class="exp-meta">
+              <span><i class="fa-solid fa-clock" aria-hidden="true"></i> 3 hrs</span>
+              <span><i class="fa-solid fa-gauge" aria-hidden="true"></i> Easy</span>
+              <span><i class="fa-solid fa-sun" aria-hidden="true"></i> Sunrise</span>
+            </div>
+            <div class="exp-score" aria-label="Recommended 5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </div>
+        </div>
+        <div class="exp-card">
+          <div class="exp-media"><span class="exp-tag optional">Optional</span><img loading="lazy" src="assets/img/28-the-thermal-pool-at-bagno.jpg" alt="The thermal pool at Bagno Vignoni in the Val d'Orcia"></div>
+          <div class="exp-body">
+            <h3 class="exp-title">Bagno Vignoni Thermal Soak</h3>
+            <p class="exp-desc">A natural thermal-spa afternoon in the middle of the Val d&rsquo;Orcia &mdash; pure, unhurried downtime.</p>
+            <div class="exp-meta">
+              <span><i class="fa-solid fa-clock" aria-hidden="true"></i> 2 hrs</span>
+              <span><i class="fa-solid fa-gauge" aria-hidden="true"></i> Easy</span>
+              <span><i class="fa-solid fa-sun" aria-hidden="true"></i> Afternoon</span>
+            </div>
+            <div class="exp-score" aria-label="Recommended 4.5 out of 5">&#9733;&#9733;&#9733;&#9733;&#189;</div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-btn next" type="button" aria-label="Scroll right">&#8250;</button>
+    </div>
+  </div>
+  <div class="base-block reveal">
+    <div class="base-block-head"><h3>Florence</h3><span class="rule"></span><span class="count">2 experiences</span></div>
+    <div class="carousel">
+      <button class="carousel-btn prev" type="button" aria-label="Scroll left" hidden>&#8249;</button>
+      <div class="carousel-track">
+        <div class="exp-card">
+          <div class="exp-media"><span class="exp-tag included">Included</span><img loading="lazy" src="assets/img/29-the-ponte-vecchio-over-the.jpg" alt="The Ponte Vecchio over the Arno in Florence"></div>
+          <div class="exp-body">
+            <h3 class="exp-title">Oltrarno Artisans &amp; Ponte Vecchio</h3>
+            <p class="exp-desc">A slow wander through the Oltrarno&rsquo;s artisan workshops, ending on the Ponte Vecchio as the Arno turns gold.</p>
+            <div class="exp-meta">
+              <span><i class="fa-solid fa-clock" aria-hidden="true"></i> 2 hrs</span>
+              <span><i class="fa-solid fa-gauge" aria-hidden="true"></i> Easy</span>
+              <span><i class="fa-solid fa-sun" aria-hidden="true"></i> Golden hour</span>
+            </div>
+            <div class="exp-score" aria-label="Recommended 4.5 out of 5">&#9733;&#9733;&#9733;&#9733;&#189;</div>
+          </div>
+        </div>
+        <div class="exp-card">
+          <div class="exp-media"><span class="exp-tag included">Included</span><img loading="lazy" src="assets/img/16-a-garden-terrace-overlooking-the.jpg" alt="A garden terrace overlooking the rooftops of Florence"></div>
+          <div class="exp-body">
+            <h3 class="exp-title">Vespers &amp; the Piazzale Sunset</h3>
+            <p class="exp-desc">Gregorian chant at San Miniato al Monte, then the ten-minute walk down to Piazzale Michelangelo as the whole city turns gold. Free.</p>
+            <div class="exp-meta">
+              <span><i class="fa-solid fa-clock" aria-hidden="true"></i> 2 hrs</span>
+              <span><i class="fa-solid fa-gauge" aria-hidden="true"></i> One gentle climb</span>
+              <span><i class="fa-solid fa-sun" aria-hidden="true"></i> Evening</span>
+            </div>
+            <div class="exp-score" aria-label="Recommended 5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-btn next" type="button" aria-label="Scroll right">&#8250;</button>
+    </div>
+  </div>
+  <div class="base-block reveal">
+    <div class="base-block-head"><h3>Lucca</h3><span class="rule"></span><span class="count">2 experiences</span></div>
+    <div class="carousel">
+      <button class="carousel-btn prev" type="button" aria-label="Scroll left" hidden>&#8249;</button>
+      <div class="carousel-track">
+        <div class="exp-card">
+          <div class="exp-media"><span class="exp-tag included">Included</span><img loading="lazy" src="assets/img/30-the-tree-lined-renaissance-walls.jpg" alt="The tree-lined Renaissance walls of Lucca"></div>
+          <div class="exp-body">
+            <h3 class="exp-title">Cycling Lucca&rsquo;s Renaissance Walls</h3>
+            <p class="exp-desc">A slow, tree-shaded loop of the entire city atop its unbroken sixteenth-century walls.</p>
+            <div class="exp-meta">
+              <span><i class="fa-solid fa-clock" aria-hidden="true"></i> 1 hr</span>
+              <span><i class="fa-solid fa-gauge" aria-hidden="true"></i> Easy</span>
+              <span><i class="fa-solid fa-sun" aria-hidden="true"></i> Golden hour</span>
+            </div>
+            <div class="exp-score" aria-label="Recommended 5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </div>
+        </div>
+        <div class="exp-card">
+          <div class="exp-media"><span class="exp-tag optional">Optional</span><img loading="lazy" src="assets/img/31-the-teatro-del-giglio-opera.jpg" alt="The Teatro del Giglio opera house in Lucca"></div>
+          <div class="exp-body">
+            <h3 class="exp-title">Puccini Recital, San Giovanni</h3>
+            <p class="exp-desc">Puccini sung a few streets from where he was born &mdash; a fitting close to the honeymoon&rsquo;s emotional finale.</p>
+            <div class="exp-meta">
+              <span><i class="fa-solid fa-clock" aria-hidden="true"></i> 1 hr</span>
+              <span><i class="fa-solid fa-gauge" aria-hidden="true"></i> Easy</span>
+              <span><i class="fa-solid fa-sun" aria-hidden="true"></i> Evening</span>
+            </div>
+            <div class="exp-score" aria-label="Recommended 5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-btn next" type="button" aria-label="Scroll right">&#8250;</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESTAURANTS ============ -->
+<section id="restaurants" class="wrap">
+  <div class="section-head reveal">
+    <span class="eyebrow">Where You&rsquo;ll Eat</span>
+    <h2>Local tables, <em>not tourist traps</em></h2>
+    <p>Family kitchens and long-standing local favorites at every base &mdash; book the starred tables well ahead. Swipe each stop for its two or three tables.</p>
+  </div>
+
+  <div class="base-block reveal">
+    <div class="base-block-head"><h3>Calabria</h3><span class="rule"></span><span class="count">2 tables</span></div>
+    <div class="carousel">
+      <button class="carousel-btn prev" type="button" aria-label="Scroll left" hidden>&#8249;</button>
+      <div class="carousel-track">
+        <div class="rest-card">
+          <div class="rest-media"><img loading="lazy" src="assets/img/32-calabrian-nduja-and-antipasti-on.jpg" alt="Calabrian 'nduja and antipasti on a rustic table"></div>
+          <div class="rest-body">
+            <h4 class="rest-name">Osteria della Cipolla Rossa</h4>
+            <div class="rest-tags"><span>Calabrian</span><span class="price">&euro;&euro;&euro;</span><span>Reserve ahead</span></div>
+            <p class="rest-desc">An intimate kitchen built around the famous Tropea red onion &mdash; once featured by Stanley Tucci.</p>
+            <p class="rest-dishes">Signature: red-onion tartare, &lsquo;nduja crostini, swordfish involtini.</p>
+            <div class="rest-foot"><span>Tropea old town</span><a href="https://www.google.com/maps/search/?api=1&amp;query=Osteria+della+Cipolla+Rossa+Tropea" target="_blank" rel="noopener">Map &rarr;</a></div>
+          </div>
+        </div>
+        <div class="rest-card">
+          <div class="rest-media"><img loading="lazy" src="assets/img/33-a-plate-of-mixed-fried.jpg" alt="A plate of mixed fried Calabrian seafood"></div>
+          <div class="rest-body">
+            <h4 class="rest-name">Trattoria Tropeana</h4>
+            <div class="rest-tags"><span>Calabrian</span><span class="price">&euro;&euro;</span><span>Lovely alley tables</span></div>
+            <p class="rest-desc">Fresh, fairly priced Calabrian cooking at charming tables tucked into a Tropea alley.</p>
+            <p class="rest-dishes">Signature: fileja alla tropeana, grilled catch of the day, fritto misto.</p>
+            <div class="rest-foot"><span>Tropea old town</span><a href="https://www.google.com/maps/search/?api=1&amp;query=Trattoria+Tropeana+Tropea" target="_blank" rel="noopener">Map &rarr;</a></div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-btn next" type="button" aria-label="Scroll right">&#8250;</button>
+    </div>
+  </div>
+  <div class="base-block reveal">
+    <div class="base-block-head"><h3>Amalfi Coast</h3><span class="rule"></span><span class="count">2 tables</span></div>
+    <div class="carousel">
+      <button class="carousel-btn prev" type="button" aria-label="Scroll left" hidden>&#8249;</button>
+      <div class="carousel-track">
+        <div class="rest-card">
+          <div class="rest-media"><img loading="lazy" src="assets/img/34-seafood-linguine-with-clams-and.jpg" alt="Seafood linguine with clams and tomatoes"></div>
+          <div class="rest-body">
+            <h4 class="rest-name">Da Ciccio Cielo Mare Terra</h4>
+            <div class="rest-tags"><span>Amalfi Seafood</span><span class="price">&euro;&euro;&euro;&euro;</span><span>Reserve ahead</span></div>
+            <p class="rest-desc">A four-generation family kitchen since 1911, with sweeping sea views over the coast road.</p>
+            <p class="rest-dishes">Signature: scialatielli ai frutti di mare, lemon-marinated anchovies.</p>
+            <div class="rest-foot"><span>Coast road above Amalfi</span><a href="https://www.google.com/maps/search/?api=1&amp;query=Da+Ciccio+Cielo+Mare+Terra+Amalfi" target="_blank" rel="noopener">Map &rarr;</a></div>
+          </div>
+        </div>
+        <div class="rest-card">
+          <div class="rest-media"><img loading="lazy" src="assets/img/11-the-staircase-and-facade-of.jpg" alt="The staircase and facade of Amalfi Cathedral"></div>
+          <div class="rest-body">
+            <h4 class="rest-name">Da Maria</h4>
+            <div class="rest-tags"><span>Amalfi Seafood &amp; Pizza</span><span class="price">&euro;&euro;&euro;</span><span>Reserve ahead</span></div>
+            <p class="rest-desc">A beloved family table a few steps from the cathedral &mdash; seafood, wood-fired pizza, and no pretension.</p>
+            <p class="rest-dishes">Signature: seafood risotto, wood-fired margherita, grilled catch.</p>
+            <div class="rest-foot"><span>Amalfi town, by the Duomo</span><a href="https://www.google.com/maps/search/?api=1&amp;query=Ristorante+Da+Maria+Amalfi" target="_blank" rel="noopener">Map &rarr;</a></div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-btn next" type="button" aria-label="Scroll right">&#8250;</button>
+    </div>
+  </div>
+  <div class="base-block reveal">
+    <div class="base-block-head"><h3>Rome</h3><span class="rule"></span><span class="count">2 tables</span></div>
+    <div class="carousel">
+      <button class="carousel-btn prev" type="button" aria-label="Scroll left" hidden>&#8249;</button>
+      <div class="carousel-track">
+        <div class="rest-card">
+          <div class="rest-media"><img loading="lazy" src="assets/img/36-a-pan-of-spaghetti-carbonara.jpg" alt="A pan of spaghetti carbonara"></div>
+          <div class="rest-body">
+            <h4 class="rest-name">Da Enzo al 29</h4>
+            <div class="rest-tags"><span>Roman</span><span class="price">&euro;&euro;</span><span>Book or queue</span></div>
+            <p class="rest-desc">Tiny and classic &mdash; the definitive Roman pastas, in the heart of Trastevere.</p>
+            <p class="rest-dishes">Signature: carbonara, amatriciana, cacio e pepe.</p>
+            <div class="rest-foot"><span>Trastevere</span><a href="https://www.google.com/maps/search/?api=1&amp;query=Da+Enzo+al+29+Roma" target="_blank" rel="noopener">Map &rarr;</a></div>
+          </div>
+        </div>
+        <div class="rest-card">
+          <div class="rest-media"><img loading="lazy" src="assets/img/37-a-bowl-of-cacio-e.jpg" alt="A bowl of cacio e pepe pasta"></div>
+          <div class="rest-body">
+            <h4 class="rest-name">Osteria der Belli</h4>
+            <div class="rest-tags"><span>Roman &amp; Seafood</span><span class="price">&euro;&euro;&euro;</span><span>Reserve ahead</span></div>
+            <p class="rest-desc">Lively Trastevere trattoria for Roman classics and Sardinian-leaning seafood.</p>
+            <p class="rest-dishes">Signature: cacio e pepe, spaghetti alle vongole, fritto.</p>
+            <div class="rest-foot"><span>Trastevere</span><a href="https://www.google.com/maps/search/?api=1&amp;query=Osteria+der+Belli+Roma" target="_blank" rel="noopener">Map &rarr;</a></div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-btn next" type="button" aria-label="Scroll right">&#8250;</button>
+    </div>
+  </div>
+  <div class="base-block reveal">
+    <div class="base-block-head"><h3>Val d&rsquo;Orcia</h3><span class="rule"></span><span class="count">3 tables</span></div>
+    <div class="carousel">
+      <button class="carousel-btn prev" type="button" aria-label="Scroll left" hidden>&#8249;</button>
+      <div class="carousel-track">
+        <div class="rest-card">
+          <div class="rest-media"><img loading="lazy" src="assets/img/38-hand-rolled-pici-pasta.jpg" alt="Hand-rolled pici pasta"></div>
+          <div class="rest-body">
+            <h4 class="rest-name">Osteria del Borgo</h4>
+            <div class="rest-tags"><span>Tuscan</span><span class="price">&euro;&euro;&euro;</span><span>Reserve ahead</span></div>
+            <p class="rest-desc">A terrace table in Montepulciano with a superb Vino Nobile list and a memorable beef-cheek ragu.</p>
+            <p class="rest-dishes">Signature: guancia di manzo, pici al ragu.</p>
+            <div class="rest-foot"><span>Montepulciano center</span><a href="https://www.google.com/maps/search/?api=1&amp;query=Osteria+del+Borgo+Montepulciano" target="_blank" rel="noopener">Map &rarr;</a></div>
+          </div>
+        </div>
+        <div class="rest-card">
+          <div class="rest-media"><img loading="lazy" src="assets/img/14-rolling-tuscan-farmland-below-the.jpg" alt="Rolling Tuscan farmland below the hill town of Pienza"></div>
+          <div class="rest-body">
+            <h4 class="rest-name">Baccus l&rsquo;Osteria</h4>
+            <div class="rest-tags"><span>Tuscan</span><span class="price">&euro;&euro;</span><span>Book ahead</span></div>
+            <p class="rest-desc">A handwritten menu and a real character of an owner, in the heart of Pienza.</p>
+            <p class="rest-dishes">Signature: bistecca alla fiorentina, a pecorino di Pienza flight.</p>
+            <div class="rest-foot"><span>Pienza center</span><a href="https://www.google.com/maps/search/?api=1&amp;query=Baccus+Osteria+Pienza" target="_blank" rel="noopener">Map &rarr;</a></div>
+          </div>
+        </div>
+        <div class="rest-card">
+          <div class="rest-media"><img loading="lazy" src="assets/img/39-a-wicker-wrapped-chianti-flask.jpg" alt="A wicker-wrapped Chianti flask on a rustic table"></div>
+          <div class="rest-body">
+            <h4 class="rest-name">The Agriturismo Farm Dinner</h4>
+            <div class="rest-tags"><span>Tuscan Farmhouse</span><span class="price">&euro;&euro;&euro;</span><span>Arrange at booking</span></div>
+            <p class="rest-desc">Dinner under the pergola at your own agriturismo &mdash; nowhere to drive afterward, everything from the farm.</p>
+            <p class="rest-dishes">Signature: hand-cut pasta, farm vegetables, estate Vino Nobile.</p>
+            <div class="rest-foot"><span>At your agriturismo &mdash; arrange when booking the room</span></div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-btn next" type="button" aria-label="Scroll right">&#8250;</button>
+    </div>
+  </div>
+  <div class="base-block reveal">
+    <div class="base-block-head"><h3>Florence</h3><span class="rule"></span><span class="count">3 tables</span></div>
+    <div class="carousel">
+      <button class="carousel-btn prev" type="button" aria-label="Scroll left" hidden>&#8249;</button>
+      <div class="carousel-track">
+        <div class="rest-card">
+          <div class="rest-media"><img loading="lazy" src="assets/img/40-a-grilled-bistecca-alla-fiorentina.jpg" alt="A grilled bistecca alla fiorentina on a wooden board"></div>
+          <div class="rest-body">
+            <h4 class="rest-name">Trattoria Giovanni</h4>
+            <div class="rest-tags"><span>Florentine</span><span class="price">&euro;&euro;&euro;</span><span>Book ahead</span></div>
+            <p class="rest-desc">Bistecca alla fiorentina and a rich wild-boar ragu, in the heart of the Oltrarno.</p>
+            <p class="rest-dishes">Signature: bistecca alla fiorentina, pappardelle al cinghiale.</p>
+            <div class="rest-foot"><span>Oltrarno</span><a href="https://www.google.com/maps/search/?api=1&amp;query=Trattoria+Giovanni+Firenze" target="_blank" rel="noopener">Map &rarr;</a></div>
+          </div>
+        </div>
+        <div class="rest-card">
+          <div class="rest-media"><img loading="lazy" src="assets/img/17-the-pitti-palace-in-the.jpg" alt="The Pitti Palace in the late afternoon, Florence"></div>
+          <div class="rest-body">
+            <h4 class="rest-name">Trattoria de&rsquo; Pitti</h4>
+            <div class="rest-tags"><span>Florentine</span><span class="price">&euro;&euro;</span><span>Walk-ins possible</span></div>
+            <p class="rest-desc">Reliable, friendly Florentine cooking on the piazza facing the Pitti Palace.</p>
+            <p class="rest-dishes">Signature: ribollita, pappa al pomodoro, tagliata.</p>
+            <div class="rest-foot"><span>Piazza Pitti</span><a href="https://www.google.com/maps/search/?api=1&amp;query=Trattoria+de+Pitti+Firenze" target="_blank" rel="noopener">Map &rarr;</a></div>
+          </div>
+        </div>
+        <div class="rest-card">
+          <div class="rest-media"><img loading="lazy" src="assets/img/41-the-mercato-centrale-market-building.jpg" alt="The Mercato Centrale market building in Florence"></div>
+          <div class="rest-body">
+            <h4 class="rest-name">Mercato Centrale</h4>
+            <div class="rest-tags"><span>Florentine Market</span><span class="price">&euro;&euro;</span><span>Walk-ins welcome</span></div>
+            <p class="rest-desc">The upstairs food hall of Florence&rsquo;s central market &mdash; a cheap, excellent, unhurried lunch.</p>
+            <p class="rest-dishes">Signature: lampredotto, fresh-pasta counters, Tuscan cheeses.</p>
+            <div class="rest-foot"><span>San Lorenzo</span><a href="https://www.google.com/maps/search/?api=1&amp;query=Mercato+Centrale+Firenze" target="_blank" rel="noopener">Map &rarr;</a></div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-btn next" type="button" aria-label="Scroll right">&#8250;</button>
+    </div>
+  </div>
+  <div class="base-block reveal">
+    <div class="base-block-head"><h3>Lucca</h3><span class="rule"></span><span class="count">2 tables</span></div>
+    <div class="carousel">
+      <button class="carousel-btn prev" type="button" aria-label="Scroll left" hidden>&#8249;</button>
+      <div class="carousel-track">
+        <div class="rest-card">
+          <div class="rest-media"><img loading="lazy" src="assets/img/42-stuffed-tordelli-pasta-in-a.jpg" alt="Stuffed tordelli pasta in a cream sauce"></div>
+          <div class="rest-body">
+            <h4 class="rest-name">Trattoria da Ubaldo</h4>
+            <div class="rest-tags"><span>Lucchese</span><span class="price">&euro;&euro;</span><span>Book ahead</span></div>
+            <p class="rest-desc">A hidden, well-priced, thoroughly authentic Lucchese kitchen &mdash; the sort found by asking a local.</p>
+            <p class="rest-dishes">Signature: tordelli lucchesi, buccellato.</p>
+            <div class="rest-foot"><span>Historic center</span><a href="https://www.google.com/maps/search/?api=1&amp;query=Trattoria+da+Ubaldo+Lucca" target="_blank" rel="noopener">Map &rarr;</a></div>
+          </div>
+        </div>
+        <div class="rest-card">
+          <div class="rest-media"><img loading="lazy" src="assets/img/43-the-rustic-interior-of-a.jpg" alt="The rustic interior of a Lucchese osteria"></div>
+          <div class="rest-body">
+            <h4 class="rest-name">Osteria Baralla</h4>
+            <div class="rest-tags"><span>Lucchese</span><span class="price">&euro;&euro;</span><span>Walk-ins welcome</span></div>
+            <p class="rest-desc">Lucchese classics under brick vaults, a few steps from the oval Piazza dell&rsquo;Anfiteatro.</p>
+            <p class="rest-dishes">Signature: farro soup, coniglio in umido.</p>
+            <div class="rest-foot"><span>By Piazza dell&rsquo;Anfiteatro</span><a href="https://www.google.com/maps/search/?api=1&amp;query=Osteria+Baralla+Lucca" target="_blank" rel="noopener">Map &rarr;</a></div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-btn next" type="button" aria-label="Scroll right">&#8250;</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRAVEL INFORMATION ============ -->
+<section id="travel-info" class="wrap">
+  <div class="section-head reveal">
+    <span class="eyebrow">Travel Information</span>
+    <h2>The practical <em>details</em></h2>
+    <p>Everything to prepare before departure, gathered in one place.</p>
+  </div>
+  <div class="info-grid">
+
+    <div class="info-card reveal">
+      <i class="fa-solid fa-cloud-sun" aria-hidden="true"></i>
+      <h4>Weather</h4>
+      <p class="sA">April: mild, 55&ndash;68&deg;F, the greenest countryside of the year &mdash; the sea remains too cold to swim.</p>
+      <p class="sB">May: warm, 62&ndash;77&deg;F, sea temperatures 66&ndash;70&deg;F &mdash; fully swimmable, long golden evenings.</p>
+    </div>
+
+    <div class="info-card reveal">
+      <i class="fa-solid fa-suitcase-rolling" aria-hidden="true"></i>
+      <h4>Packing List</h4>
+      <ul>
+        <li>Comfortable walking shoes + one dressy pair</li>
+        <li>A light layer for coastal evenings</li>
+        <li>Modest coverage for church visits</li>
+        <li>Swimwear <span class="sB">(the sea is ready in May)</span></li>
+      </ul>
+    </div>
+
+    <div class="info-card reveal">
+      <i class="fa-solid fa-euro-sign" aria-hidden="true"></i>
+      <h4>Currency</h4>
+      <p>Euro (&euro;). Cards are widely accepted; keep small cash for rural agriturismi, cellar tastings, and gelato.</p>
+    </div>
+
+    <div class="info-card reveal">
+      <i class="fa-solid fa-hand-holding-dollar" aria-hidden="true"></i>
+      <h4>Tipping</h4>
+      <p>Not obligatory. Rounding up or leaving 5&ndash;10% for exceptional service is generous and appreciated.</p>
+    </div>
+
+    <div class="info-card reveal">
+      <i class="fa-solid fa-car-side" aria-hidden="true"></i>
+      <h4>Transportation</h4>
+      <p>Two small manual rentals for the scenic stretches; Frecciarossa/Italo trains and the Salerno&ndash;Amalfi ferry link the rest. Never drive into a town&rsquo;s ZTL zone.</p>
+    </div>
+
+    <div class="info-card reveal">
+      <i class="fa-solid fa-passport" aria-hidden="true"></i>
+      <h4>Passports &amp; Visas</h4>
+      <p>US passport holders enter Italy visa-free for stays under 90 days. Schengen rules require a passport valid 3+ months beyond departure &mdash; aim for validity through at least <span class="sA">late 2027</span><span class="sB">early 2028</span>, and renew now if it&rsquo;s close.</p>
+    </div>
+
+    <div class="info-card reveal">
+      <i class="fa-solid fa-plug" aria-hidden="true"></i>
+      <h4>Electrical Outlets</h4>
+      <p>Type C/F/L sockets, 230V. A universal adapter is recommended; most modern chargers handle the voltage automatically.</p>
+    </div>
+
+    <div class="info-card reveal">
+      <i class="fa-solid fa-phone" aria-hidden="true"></i>
+      <h4>Emergency Numbers</h4>
+      <p>112 for all emergencies nationwide (police, fire, medical). English-speaking operators are generally available.</p>
+    </div>
+
+    <div class="info-card reveal">
+      <i class="fa-solid fa-wifi" aria-hidden="true"></i>
+      <h4>Internet</h4>
+      <p>An eSIM data plan is recommended for both phones; most B&amp;Bs and agriturismi offer reliable Wi-Fi.</p>
+    </div>
+
+    <div class="info-card reveal">
+      <i class="fa-solid fa-people-arrows" aria-hidden="true"></i>
+      <h4>Local Customs</h4>
+      <p>Dinner runs later than in the US (often 8pm+); greet shopkeepers on entering; dress modestly for churches.</p>
+    </div>
+
+    <div class="info-card reveal">
+      <i class="fa-solid fa-language" aria-hidden="true"></i>
+      <h4>Language</h4>
+      <p>Italian. English is widely spoken in tourist areas; a few courtesy phrases go a long way in the family towns.</p>
+    </div>
+
+    <div class="info-card reveal">
+      <i class="fa-solid fa-sack-dollar" aria-hidden="true"></i>
+      <h4>Budget At A Glance</h4>
+      <p>All-in (flights, lodging, cars, trains, food, experiences): <strong>~$8,150&ndash;$12,400</strong> per couple. The optional romantic extras &mdash; the balloon, the private boat, a photo shoot, a spa afternoon &mdash; add <strong>$600&ndash;$1,800</strong>. Full line-item budget on the <a href="planning.html#budget">Planning page</a>.</p>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FLOATING TRIP SIDEBAR (desktop) ============ -->
+<aside class="trip-sidebar" aria-label="Trip summary">
+  <h4>Trip Summary</h4>
+  <dl>
+    <div class="si"><dt>Duration</dt><dd>16 Days / 15 Nights</dd></div>
+    <div class="si"><dt>Bases</dt><dd>6</dd></div>
+    <div class="si"><dt>Now Viewing</dt><dd id="sb-current">Overview</dd></div>
+    <div class="si"><dt>Weather</dt><dd><span class="sA">55&ndash;68&deg;F</span><span class="sB">62&ndash;77&deg;F</span></dd></div>
+    <div class="si"><dt>Currency</dt><dd>Euro (&euro;)</dd></div>
+    <div class="si"><dt>Language</dt><dd>Italian</dd></div>
+    <div class="si"><dt>Time Zone</dt><dd>CEST (UTC+2)</dd></div>
+    <div class="si"><dt>Est. Budget</dt><dd>$8.2K&ndash;$12.4K</dd></div>
+  </dl>
+</aside>
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lightbox-close" id="lightbox-close" aria-label="Close image viewer">&times;</button>
+  <figure>
+    <img id="lightbox-img" src="" alt="">
+    <figcaption id="lightbox-caption"></figcaption>
+  </figure>
+</div>
+
+<!-- ============ BACK TO TOP ============ -->
+<button id="back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></button>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <p class="fin">Buon viaggio e tanti auguri</p>
+  <p class="sig">Palmi &middot; Tropea &middot; Amalfi Coast &middot; Rome &middot; Val d&rsquo;Orcia &middot; Florence &middot; Lucca</p>
+  <p class="fin-note">A tailormade journey, built for two families becoming one &mdash; from his ancestral coast to hers among the cypress hills.</p>
+</footer>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
