@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html,body{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#F6F1E7;color:#23282B;line-height:1.75;font-size:17px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:#2E4034;text-decoration:none;transition:color .3s ease}
+a:hover{color:#B08A3E}
+::selection{background:#E4D9BE;color:#23282B}
+@keyframes revealIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.01ms!important}}
+</style>
+</helmet>
+
+<div data-progress style="position:fixed;top:0;left:0;height:2px;width:0%;background:linear-gradient(90deg,#B08A3E,#D8B872);z-index:400;transition:width .12s linear"></div>
+
+<header data-nav style="position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(246,241,231,.88);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);box-shadow:0 1px 0 rgba(210,197,170,.6)">
+  <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,52px);height:74px;display:flex;align-items:center;gap:30px">
+    <a href="{{ itinHref }}" style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;letter-spacing:.05em;white-space:nowrap;color:#2E4034">Palmi <span style="font-style:italic">&</span> Lucca</a>
+    <nav data-navlinks style="margin-left:auto;align-items:center;gap:28px">
+      <sc-for list="{{ navItems }}" as="n" hint-placeholder-count="8">
+        <a href="{{ n.href }}" style="font-size:11.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;padding:8px 0;position:relative;color:{{ n.color }}">{{ n.label }}</a>
+      </sc-for>
+    </nav>
+    <div style="display:flex;align-items:center;gap:16px">
+      <div style="display:inline-flex;align-items:center;border:1px solid rgba(46,64,52,.4);border-radius:999px;overflow:hidden">
+        <button data-season-a type="button" style="font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:8px 15px;border:0;background:transparent;color:#2E4034;transition:background .3s,color .3s">April</button>
+        <button data-season-b type="button" style="font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:8px 15px;border:0;background:transparent;color:#2E4034;transition:background .3s,color .3s">May</button>
+      </div>
+      <button data-hamburger type="button" aria-label="Open menu" style="display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;border:0;background:transparent">
+        <span data-bar style="display:block;width:22px;height:1.5px;background:#2E4034;transition:.3s"></span>
+        <span data-bar style="display:block;width:22px;height:1.5px;background:#2E4034;transition:.3s"></span>
+        <span data-bar style="display:block;width:22px;height:1.5px;background:#2E4034;transition:.3s"></span>
+      </button>
+    </div>
+  </div>
+  <nav data-mobilenav style="display:none;flex-direction:column;background:#FDFBF6;border-top:1px solid #E6DDCA;overflow:hidden;max-height:0;transition:max-height .4s ease">
+    <sc-for list="{{ navItems }}" as="n" hint-placeholder-count="8">
+      <a href="{{ n.href }}" style="padding:15px clamp(20px,4vw,52px);font-size:13px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#3A4145;border-bottom:1px solid #EFE7D6">{{ n.label }}</a>
+    </sc-for>
+  </nav>
+</header>
+
+<section style="position:relative;min-height:clamp(440px,66vh,620px);display:flex;align-items:flex-end;overflow:hidden;color:#FDFBF6;margin-top:0">
+  <img src="assets/img/05-cypress-trees-on-the-rolling.jpg" alt="Cypress trees on the rolling hills of the Val d\u2019Orcia" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,28,23,.34) 0%,rgba(18,28,23,.42) 46%,rgba(16,24,20,.9) 100%)"></div>
+  <div style="position:relative;z-index:2;width:100%;max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,52px) clamp(48px,8vh,84px)">
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px">
+      <span style="width:44px;height:1px;background:#D8B872"></span>
+      <span style="font-size:11.5px;font-weight:600;letter-spacing:.34em;text-transform:uppercase;color:#E4D3A3">The Planning Desk</span>
+    </div>
+    <h1 style="font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(42px,6.4vw,84px);line-height:1;letter-spacing:.004em;margin-bottom:22px">Book it, <span style="font-style:italic;font-weight:400;color:#E4D3A3">in the right order</span></h1>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(18px,2.1vw,24px);max-width:52ch;color:#E7E1D2;line-height:1.5;font-weight:400">Everything that needs a reservation, counted back from departure ({{ departLabel }}). Earlier is always better for the scarce items &mdash; the small B&amp;Bs, the balloon, the private boat, and peak-season flights. The season toggle updates every date here.</p>
+  </div>
+</section>
+
+<main>
+
+<section id="bookby" style="padding:clamp(80px,12vh,150px) 0;background:#F6F1E7">
+  <div style="max-width:1000px;margin:0 auto;padding:0 clamp(20px,4vw,52px)">
+    <div data-reveal style="max-width:720px;margin-bottom:clamp(44px,6vh,68px)">
+      <span style="font-size:12px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:#A8823A;display:block;margin-bottom:22px">Book-By Checklist</span>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(34px,4.6vw,54px);line-height:1.05;color:#2A2F31">Counted back from <em style="font-style:italic;font-weight:400;color:#A8823A">departure</em></h2>
+    </div>
+
+    <div style="position:relative;padding-left:clamp(22px,3vw,40px);border-left:1px solid #DED4BF">
+      <sc-for list="{{ phases }}" as="ph" hint-placeholder-count="6">
+        <div data-reveal style="position:relative;padding-bottom:clamp(38px,5vh,58px)">
+          <span style="position:absolute;left:calc(-1 * clamp(22px,3vw,40px) - 5.5px);top:7px;width:11px;height:11px;border-radius:50%;background:#B08A3E;box-shadow:0 0 0 4px #F6F1E7"></span>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(21px,2.5vw,27px);color:#2E4034;margin-bottom:20px;line-height:1.2">{{ ph.title }}</h3>
+          <div style="display:flex;flex-direction:column;gap:2px">
+            <sc-for list="{{ ph.tasks }}" as="t" hint-placeholder-count="4">
+              <div style="display:grid;grid-template-columns:130px 1fr;gap:8px 22px;padding:14px 0;border-top:1px solid #E6DDCA;align-items:start">
+                <span style="font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#7A5E27;background:#EFE7D6;border-radius:6px;padding:6px 10px;text-align:center;white-space:nowrap;line-height:1.3">{{ t.when }}</span>
+                <p style="font-size:15px;color:#3A4145;line-height:1.6"><strong style="font-weight:600;color:#23282B">{{ t.lead }}</strong>{{ t.body }}</p>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+
+    <div data-reveal style="margin-top:14px;border-left:2px solid #B08A3E;background:#FDFBF6;border-radius:0 12px 12px 0;padding:22px 26px;box-shadow:0 14px 34px rgba(22,33,27,.06)">
+      <p style="font-size:15px;color:#3A4145;line-height:1.7"><strong style="font-weight:600;color:#2E4034">{{ seasonNoteLabel }}</strong> {{ seasonNote }}</p>
+    </div>
+  </div>
+</section>
+
+<section id="budget" style="padding:clamp(80px,12vh,150px) 0;background:#FDFBF6">
+  <div style="max-width:940px;margin:0 auto;padding:0 clamp(20px,4vw,52px)">
+    <div data-reveal style="max-width:720px;margin-bottom:clamp(40px,5vh,60px)">
+      <span style="font-size:12px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:#A8823A;display:block;margin-bottom:22px">The Budget</span>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(34px,4.6vw,54px);line-height:1.05;color:#2A2F31">What it costs, <em style="font-style:italic;font-weight:400;color:#A8823A">line by line</em></h2>
+      <p style="font-size:17px;color:#5B6468;max-width:60ch;margin-top:22px">Estimates for two travelers across all fifteen nights in shoulder season. May runs a touch higher than April at the lodging line; everything else holds.</p>
+    </div>
+    <div data-reveal>
+      <sc-for list="{{ budget }}" as="b" hint-placeholder-count="8">
+        <div style="display:flex;align-items:baseline;gap:14px;padding:16px 0;border-top:1px solid #EDE4D2">
+          <span style="font-size:15.5px;color:#3A4145;line-height:1.5;flex-shrink:1">{{ b.cat }}</span>
+          <span style="flex:1;border-bottom:1px dotted #CFC3A6;transform:translateY(-4px);min-width:20px"></span>
+          <span style="font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:#2E4034;white-space:nowrap">{{ b.amt }}</span>
+        </div>
+      </sc-for>
+      <div style="display:flex;align-items:baseline;gap:14px;padding:20px 0;border-top:2px solid #2E4034;margin-top:6px">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#2A2F31">Approx. total, two people</span>
+        <span style="flex:1"></span>
+        <span style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:#2E4034;white-space:nowrap">~$8,150&ndash;$12,400</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:14px;padding:14px 0;border-top:1px solid #EDE4D2">
+        <span style="font-size:14.5px;font-style:italic;color:#8C9690;line-height:1.5">Optional romantic extras &mdash; balloon, private boat, photo shoot, spa, vineyard dinner</span>
+        <span style="flex:1;border-bottom:1px dotted #CFC3A6;transform:translateY(-4px);min-width:20px"></span>
+        <span style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:#B08A3E;white-space:nowrap">+$600&ndash;$1,800</span>
+      </div>
+    </div>
+    <div data-reveal style="margin-top:32px;border-left:2px solid #B08A3E;padding:6px 0 6px 20px">
+      <p style="font-size:15px;color:#3A4145;line-height:1.7"><strong style="font-weight:600;color:#2E4034">Funding it:</strong> a realistic mix is a honeymoon registry covering the experiences, an optional family gift toward flights, and you covering the balance. Saving ~$700&ndash;850/month for a year covers the couple&rsquo;s share of a ~$10K trip on its own.</p>
+    </div>
+  </div>
+</section>
+
+<div data-reveal style="position:relative;height:clamp(320px,48vh,520px);overflow:hidden;background:#16211B">
+  <img src="assets/img/27-a-red-hot-air-balloon.jpg" alt="A red hot-air balloon aloft against the sky" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.78">
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,28,23,.4),rgba(18,28,23,.66))"></div>
+  <div style="position:relative;height:100%;max-width:860px;margin:0 auto;padding:0 clamp(20px,4vw,52px);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#FDFBF6">
+    <span style="width:44px;height:1px;background:#D8B872;margin-bottom:24px"></span>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(23px,3.4vw,42px);line-height:1.3;color:#F3EAD3">Let the people who love you give you the trip, one moment at a time.</p>
+  </div>
+</div>
+
+<section id="registry" style="padding:clamp(80px,12vh,150px) 0;background:#F6F1E7">
+  <div style="max-width:1080px;margin:0 auto;padding:0 clamp(20px,4vw,52px)">
+    <div data-reveal style="max-width:720px;margin-bottom:clamp(40px,5vh,60px)">
+      <span style="font-size:12px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:#A8823A;display:block;margin-bottom:22px">The Registry</span>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(34px,4.6vw,54px);line-height:1.05;color:#2A2F31">Gift ideas <em style="font-style:italic;font-weight:400;color:#A8823A">guests can give</em></h2>
+      <p style="font-size:17px;color:#5B6468;max-width:60ch;margin-top:22px">Concrete, giftable pieces of the trip for Honeyfund or Zola &mdash; from the splurges down to a tank of Tuscan gas, so every guest can join in.</p>
+    </div>
+    <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0 clamp(36px,4vw,64px)">
+      <sc-for list="{{ registry }}" as="g" hint-placeholder-count="16">
+        <div style="display:flex;align-items:baseline;gap:12px;padding:15px 0;border-top:1px solid #DED4BF">
+          <span style="font-size:15px;color:#3A4145;line-height:1.45">{{ g.item }}</span>
+          <span style="flex:1;border-bottom:1px dotted #CFC3A6;transform:translateY(-4px);min-width:14px"></span>
+          <span style="font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:#B08A3E;white-space:nowrap">{{ g.cost }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer style="background:#141F19;color:#B9C4B6;padding:clamp(72px,11vh,116px) clamp(20px,4vw,52px) clamp(48px,7vh,72px);text-align:center">
+  <span style="display:inline-block;width:44px;height:1px;background:#B08A3E;margin-bottom:28px"></span>
+  <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(26px,4vw,42px);color:#E4D3A3;margin-bottom:20px;line-height:1.2">Everything booked, nothing rushed</p>
+  <a href="{{ itinHref }}" style="display:inline-flex;align-items:center;gap:10px;font-size:11.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#E4D3A3;border:1px solid rgba(228,211,163,.5);padding:14px 30px;border-radius:2px;transition:background .3s,color .3s" onmouseover="this.style.background='#E4D3A3';this.style.color='#16211B'" onmouseout="this.style.background='transparent';this.style.color='#E4D3A3'"><i class="fa-solid fa-arrow-left" style="font-size:10px"></i> Back to the Itinerary</a>
+</footer>
+
+<button data-backtop onclick="document.body.scrollTo({top:0,behavior:'smooth'});window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top" style="position:fixed;bottom:26px;right:26px;width:50px;height:50px;border-radius:50%;background:#2E4034;color:#E4D3A3;border:0;font-size:16px;box-shadow:0 14px 34px rgba(22,33,27,.22);opacity:0;visibility:hidden;transform:translateY(14px);transition:all .35s ease;z-index:150"><i class="fa-solid fa-arrow-up"></i></button>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { season: 'b' };
+
+  itinFile = 'Palmi%20&%20Lucca%20Itinerary.dc.html';
+
+  pick(v){ return (v && typeof v==='object' && 'a' in v && 'b' in v) ? (this.state.season==='a'?v.a:v.b) : v; }
+
+  phasesRaw = [
+    { title:'As soon as you commit', tasks:[
+      {when:'Now', lead:'Check both passports', body:' \u2014 valid well past the return date (Schengen requires 3+ months beyond departure; renew now if it\u2019s close \u2014 US renewals can take weeks).'},
+      {when:'Now', lead:'Set flight fare alerts', body:' for the open-jaw (SAT \u2192 SUF, PSA \u2192 SAT) on Google Flights or Kayak. Price Houston (IAH) as an alternative origin \u2014 often more options.'},
+      {when:'By Dec 2026', lead:'Set up the honeymoon registry', body:' (Honeyfund, Zola) and tie it to the Feb 2027 wedding invites \u2014 see the gift ideas below.'}
+    ]},
+    { title:'~6 months out \u2014 lock the scarce items', tasks:[
+      {when:{a:'By Nov 2026',b:'By Dec 2026'}, lead:'Book flights', body:' (open-jaw, 2 pax). Good fares and peak-season seats go early.'},
+      {when:'With flights', lead:'Buy travel insurance', body:' within ~2 weeks of the first trip payment to keep pre-existing-condition and cancel-for-any-reason options open.'},
+      {when:{a:'By Nov 2026',b:'By Oct 2026'}, lead:'Book all 6 stays', body:' \u2014 Atrani (four nights) and Florence first; they have the fewest rooms and sell out fastest. Ask the agriturismo about the farm dinner and a tasting when booking.'},
+      {when:{a:'By Jan 2027',b:'By Feb 2027'}, lead:'Reserve both rental cars', body:' \u2014 smallest manual transmission; confirm the one-way drops at Salerno and Florence Airport.'},
+      {when:{a:'By Jan 2027',b:'By Feb 2027'}, lead:'Book the sunrise hot-air balloon', body:' (Val d\u2019Orcia) \u2014 limited baskets per morning. Or plan the free Vitaleta-chapel sunrise instead.'}
+    ]},
+    { title:'~3 months out', tasks:[
+      {when:{a:'By mid-Jan 2027',b:'By mid-Feb 2027'}, lead:'Book the high-speed train', body:' Salerno \u2192 Rome \u2014 cheap advance fares release ~4 months ahead and sell out. Book Rome \u2192 Orvieto and Orvieto \u2192 Chiusi as two separate legs.'},
+      {when:{a:'By Feb 2027',b:'By Mar 2027'}, lead:'Reserve the private / sunset Amalfi boat', body:', and the sunset aperitivo cruise in Tropea.'},
+      {when:{a:'By Feb 2027',b:'By Mar 2027'}, lead:'Book the couples\u2019 Tuscan cooking class', body:'.'},
+      {when:{a:'By Feb 2027',b:'By Mar 2027'}, lead:'Hire the driver for the Montalcino / Brunello day', body:' \u2014 or confirm the walkable Montepulciano-cellars plan instead.'},
+      {when:{a:'By Feb 2027',b:'By Mar 2027'}, lead:'Reserve the Ravello sunset-dinner table', body:', and check the Villa Rufolo / Ravello Festival concert calendar for your Tuesday.'},
+      {when:{a:'By Mar 2027',b:'By Apr 2027'}, lead:'Get International Driving Permits', body:' (AAA, ~$20 each, valid one year) \u2014 required alongside your license in Italy.'}
+    ]},
+    { title:'~1 month out', tasks:[
+      {when:{a:'Opens ~mid-Feb',b:'Opens ~mid-Mar'}, lead:'Vatican Museums / Sistine tickets', body:' (only if doing a big Rome sight) \u2014 released ~60 days ahead; book the early slot the day they open.'},
+      {when:{a:'By late Mar',b:'By late Apr'}, lead:'Uffizi or Accademia timed tickets', body:' (Florence).'},
+      {when:{a:'By late Mar',b:'By late Apr'}, lead:'Puccini e la sua Lucca recital tickets', body:' (San Giovanni, nightly ~7pm) for the final Saturday.'},
+      {when:{a:'By late Mar',b:'By late Apr'}, lead:'Reserve the headline dinners', body:' \u2014 Osteria della Cipolla Rossa (Tropea), Da Ciccio (Amalfi), the farm dinner, a Piazza dell\u2019Anfiteatro table (Lucca).'},
+      {when:{a:'By early Apr',b:'By early May'}, lead:'Book the wine tastings', body:' (Vino Nobile / Brunello), the thermal-spa afternoon, and the lemon-terrace tour (Amalfi).'},
+      {when:'Week before', lead:'Siena Duomo (Opa Si) ticket', body:' \u2014 online a few days ahead is fine.'},
+      {when:'Week before', lead:'Herculaneum or Pompeii timed tickets', body:' \u2014 a few days ahead is fine. If Pompeii, book the 2.5\u20133 hr guide ~3 weeks ahead.'}
+    ]},
+    { title:'~30 days before your Rome dates \u2014 set a phone reminder', tasks:[
+      {when:{a:'Reminder ~Mar 17',b:'Reminder ~Apr 14'}, lead:'Colosseum + Forum + Palatine timed tickets', body:{a:' (only if doing the big sight). Official tickets release ~30 days ahead and sell out within minutes \u2014 buy the moment they drop. Rome days: Apr 16\u201317.',b:' (only if doing the big sight). Official tickets release ~30 days ahead and sell out within minutes \u2014 buy the moment they drop. Rome days: May 14\u201315.'}}
+    ]},
+    { title:'Final 1\u20132 weeks', tasks:[
+      {when:{a:'By ~Apr 2',b:'By ~Apr 30'}, lead:'Buy eSIM data plans', body:' for both phones.'},
+      {when:'Final week', lead:'Reconfirm everything', body:' \u2014 hotels, both car pickups, the balloon / boat / driver. Confirm the last Salerno \u2192 Amalfi ferry time for your Monday, and the San Miniato vespers schedule. Download the Trenitalia, Italo, ferry, and offline-map apps.'},
+      {when:'Anytime', lead:'Regional trains can wait', body:' \u2014 Florence \u2192 Lucca and Lucca \u2192 Pisa are fixed-price; buy on the app even day-of.'},
+      {when:'\u2014', lead:'No booking needed:', body:' Villa Cimbrone gardens (pay at the gate) \u00b7 the Orange Garden and Aventine keyhole (free) \u00b7 San Miniato vespers (free) \u00b7 the Vitaleta sunrise (free) \u00b7 most trattoria lunches.'}
+    ]}
+  ];
+
+  budgetRaw = [
+    {cat:'Flights \u2014 open-jaw SAT \u2192 SUF / PSA \u2192 SAT, 2 pax', amt:'$2,400\u2013$3,400'},
+    {cat:{a:'Lodging \u2014 15 nights in B&Bs and agriturismi', b:'Lodging \u2014 15 nights in B&Bs and agriturismi (May sea-view season pushes the top end)'}, amt:{a:'$2,100\u2013$3,000', b:'$2,400\u2013$3,400'}},
+    {cat:'Rental cars \u00d72 + fuel, tolls, parking', amt:'$800\u2013$1,100'},
+    {cat:'Trains + ferries, 2 pax', amt:'$300\u2013$450'},
+    {cat:'Food & wine, incl. the Ravello splurge dinner', amt:'$1,600\u2013$2,400'},
+    {cat:'Experiences & tickets \u2014 Herculaneum, Siena Duomo, the Puccini recital, the Montalcino driver', amt:'$650\u2013$1,150'},
+    {cat:'Misc \u2014 taxis, tips, IDPs, eSIMs', amt:'$300\u2013$500'}
+  ];
+
+  registry = [
+    {item:'Sunrise hot-air balloon over the Tuscan hills', cost:'$500'},
+    {item:'Private sunset boat on the Amalfi Coast', cost:'$300\u2013$600'},
+    {item:'Sunset dinner in Ravello', cost:'$250'},
+    {item:'A night in a sea-view room, Amalfi Coast', cost:'$250 / night'},
+    {item:'Golden-hour honeymoon photo shoot', cost:'$250'},
+    {item:'Vineyard dinner among the vines, Val d\u2019Orcia', cost:'$200'},
+    {item:'Private driver for a Brunello day, Montalcino', cost:'$200'},
+    {item:'A night at a Val d\u2019Orcia agriturismo', cost:'$180 / night'},
+    {item:'Couples\u2019 Tuscan cooking class', cost:'$160'},
+    {item:'Thermal-spa afternoon in Tuscany', cost:'$120'},
+    {item:'Anniversary dinner fund, Lucca', cost:'$120'},
+    {item:'Puccini recital for two + prosecco, Lucca', cost:'$60'},
+    {item:'Vino Nobile / Brunello cellar tasting', cost:'$60'},
+    {item:'Lemon-terrace tour & limoncello tasting, Amalfi', cost:'$50'},
+    {item:'Herculaneum tickets for two', cost:'$35'},
+    {item:'Small joys \u2014 a tank of gas, two train tickets, a gelato evening', cost:'$25\u2013$75'}
+  ];
+
+  renderVals(){
+    const A = this.state.season==='a';
+    const p = (v)=>this.pick(v);
+    const nav = [
+      {label:'Overview', href:this.itinFile+'#overview'},
+      {label:'Route', href:this.itinFile+'#route'},
+      {label:'Itinerary', href:this.itinFile+'#itinerary'},
+      {label:'Stay', href:this.itinFile+'#stay'},
+      {label:'Experiences', href:this.itinFile+'#experiences'},
+      {label:'Restaurants', href:this.itinFile+'#restaurants'},
+      {label:'Travel Info', href:this.itinFile+'#travel-info'},
+      {label:'Planning', href:'#bookby'}
+    ].map(n=>({...n, color: n.label==='Planning' ? '#2E4034' : '#5B6468'}));
+
+    return {
+      itinHref: this.itinFile,
+      navItems: nav,
+      departLabel: A ? 'Fri, Apr 9, 2027' : 'Fri, May 7, 2027',
+      phases: this.phasesRaw.map(ph=>({ title:ph.title, tasks:ph.tasks.map(t=>({when:p(t.when), lead:t.lead, body:p(t.body)})) })),
+      budget: this.budgetRaw.map(b=>({cat:p(b.cat), amt:p(b.amt)})),
+      registry: this.registry,
+      seasonNoteLabel: A ? 'April note:' : 'May note:',
+      seasonNote: A
+        ? 'your last full day and departure (Apr 24\u201325) fall on Italy\u2019s Liberation Day weekend \u2014 expect ceremonies and some closures in Lucca; the Pisa flight is unaffected. Also confirm coastal hotels, the Salerno\u2013Amalfi ferries, and the boat operators have opened for the season.'
+        : 'the coast is fully in season \u2014 which is exactly why Atrani, the balloon, and the private boat are the first things to sell out. Book those three before anything else.'
+    };
+  }
+
+  reduce(){ return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches; }
+  sTop(){ return (this._sc && this._sc.scrollTop) || document.body.scrollTop || document.documentElement.scrollTop || window.scrollY || 0; }
+  sMax(){ const s=this._sc; if(s && s.scrollHeight>s.clientHeight) return Math.max(s.scrollHeight-s.clientHeight,1); const b=document.body,h=document.documentElement; return Math.max(b.scrollHeight-b.clientHeight,h.scrollHeight-h.clientHeight,1); }
+
+  setSeason(s){
+    this.setState({season:s}, ()=>this.updateSeasonUI());
+    try{ localStorage.setItem('pl-season', s); }catch(e){}
+  }
+  updateSeasonUI(){
+    const a=document.querySelector('[data-season-a]'), b=document.querySelector('[data-season-b]');
+    const on=this.state.season;
+    [['a',a],['b',b]].forEach(([k,el])=>{ if(!el)return; const active=on===k; el.style.background=active?'#2E4034':'transparent'; el.style.color=active?'#FDFBF6':'#2E4034'; });
+  }
+
+  componentDidMount(){
+    let saved=null; try{ saved=localStorage.getItem('pl-season'); }catch(e){}
+    if(saved==='a'||saved==='b'){ this.setState({season:saved}, ()=>this.updateSeasonUI()); }
+    else this.updateSeasonUI();
+
+    document.querySelector('[data-season-a]')?.addEventListener('click', ()=>this.setSeason('a'));
+    document.querySelector('[data-season-b]')?.addEventListener('click', ()=>this.setSeason('b'));
+
+    this.initReveal();
+    this.initNavResponsive();
+    this.initScroll();
+  }
+
+  initScroll(){
+    const backtop=document.querySelector('[data-backtop]');
+    const bar=document.querySelector('[data-progress]');
+    const onScroll=()=>{
+      const t=this.sTop();
+      if(bar) bar.style.width=((t/this.sMax())*100)+'%';
+      if(backtop){ const show=t>700; backtop.style.opacity=show?'1':'0'; backtop.style.visibility=show?'visible':'hidden'; backtop.style.transform=show?'translateY(0)':'translateY(14px)'; }
+    };
+    const h=(e)=>{ const tg=e&&e.target; if(tg&&tg.nodeType===1&&tg.scrollTop>0) this._sc=tg; onScroll(); };
+    window.addEventListener('scroll', h, {passive:true});
+    document.addEventListener('scroll', h, {capture:true, passive:true});
+  }
+
+  initReveal(){
+    const items=[...document.querySelectorAll('[data-reveal]')];
+    if(this.reduce()) return;
+    items.forEach(el=>{ if(el.getBoundingClientRect().top > window.innerHeight*0.92) el.style.opacity='0'; });
+    const io=new IntersectionObserver((ents,obs)=>{ ents.forEach(e=>{ if(e.isIntersecting){ e.target.style.animation='revealIn .9s cubic-bezier(.2,.7,.2,1) forwards'; obs.unobserve(e.target); } }); }, {threshold:0.1});
+    items.forEach(el=>io.observe(el));
+  }
+
+  initNavResponsive(){
+    const linksWrap=document.querySelector('[data-navlinks]');
+    const hamb=document.querySelector('[data-hamburger]');
+    const mobile=document.querySelector('[data-mobilenav]');
+    const bars=[...document.querySelectorAll('[data-bar]')];
+    let open=false;
+    const apply=()=>{ const narrow=window.innerWidth<1080; if(linksWrap)linksWrap.style.display=narrow?'none':'flex'; if(hamb)hamb.style.display=narrow?'flex':'none'; if(!narrow){ open=false; if(mobile)mobile.style.maxHeight='0'; } };
+    window.addEventListener('resize', apply);
+    hamb?.addEventListener('click', ()=>{ open=!open; if(mobile)mobile.style.maxHeight=open?'480px':'0'; bars[0].style.transform=open?'translateY(6.5px) rotate(45deg)':'none'; bars[1].style.opacity=open?'0':'1'; bars[2].style.transform=open?'translateY(-6.5px) rotate(-45deg)':'none'; });
+    mobile?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{ open=false; if(mobile)mobile.style.maxHeight='0'; bars[0].style.transform='none'; bars[1].style.opacity='1'; bars[2].style.transform='none'; }));
+    apply();
+  }
+}
+</script>
+</body>
+</html>
